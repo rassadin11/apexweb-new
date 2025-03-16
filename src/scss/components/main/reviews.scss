@@ -1,0 +1,62 @@
+.review-block {
+  border: 2px solid rgba(255, 255, 255, 0.04);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(2rem);
+  }
+
+  &:hover {
+    .blur3 {
+      opacity: 0.45;
+    }
+
+    .blur4 {
+      opacity: 0.65;
+    }
+  }
+}
+
+.block-review {
+  &__text {
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    z-index: 5;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__wrapper {
+    z-index: 5;
+  }
+
+  &__description {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  &__author {
+    @media (max-width: 992px) {
+      font-size: 1.3125rem !important;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1.125rem !important;
+    }
+  }
+
+  &__text,
+  &__description {
+    @media (max-width: 992px) {
+      font-size: 1.125rem !important;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem !important;
+    }
+  }
+}

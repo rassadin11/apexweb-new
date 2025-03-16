@@ -1,0 +1,22 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+
+// подключения компонентов страницы
+@import "./vendor.scss";
+@import "./bootstrap/bootstrap.scss";
+
+// main page
+@import "./components/main/slider.scss";
+@import "./components/main.scss";
+@import "./components/_header";
+@import "./components/main/main_section.scss";
+@import "./components/main/why-we.scss";
+@import "./components/main/partners.scss";
+@import "./components/main/projects.scss";
+@import "./components/main/popular_services.scss";
+@import "./components/main/helpful.scss";
+@import "./components/main/reviews.scss";
+@import "./components/main/form.scss";
+@import "./components/main/footer.scss";

@@ -1,0 +1,156 @@
+.popular-services {
+  &__blocks {
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__block {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(2rem);
+
+    & *:not(.service) {
+      z-index: 5;
+      position: relative;
+    }
+
+    .links-project__link {
+      color: var(--bs-black);
+      width: fit-content;
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      & .service-large-arrow {
+        filter: invert(1);
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    &:hover {
+      .blur3 {
+        opacity: 0.4;
+        bottom: -160px;
+      }
+
+      .blur4 {
+        opacity: 0.25;
+        top: -180px;
+      }
+    }
+  }
+
+  &__arrow {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0.25),
+      0px 2px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 50%;
+
+    display: inline;
+  }
+
+  &__arrow svg {
+    width: 20px;
+    height: 20px;
+    box-sizing: content-box;
+  }
+}
+
+.blur3 {
+  z-index: 2;
+  height: 400px;
+  width: 200%;
+  // background: radial-gradient(
+  //   ellipse at center,
+  //   rgba(69, 65, 243, 0.3) 10%,
+  //   rgba(69, 65, 243, 0.2) 35%,
+  //   rgba(69, 65, 243, 0.05) 60%,
+  //   rgba(237, 24, 113, 0) 70%
+  // );
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(70, 66, 243, 0.3) 0%,
+    rgba(53, 47, 171, 0.2) 40%,
+    rgba(38, 30, 106, 0.05) 71%,
+    rgba(18, 7, 21, 0) 100%
+  );
+
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &.service {
+    opacity: 0.3;
+    bottom: -180px;
+    left: -210px;
+  }
+
+  &.helpful {
+    width: 80%;
+    top: -100px;
+    left: 0;
+    opacity: 0.2;
+  }
+
+  &.review {
+    width: 200%;
+    top: -250px;
+    left: 0;
+    opacity: 0.3;
+  }
+}
+
+.blur4 {
+  z-index: 2;
+  height: 300px;
+  width: 125%;
+
+  background: radial-gradient(
+    ellipse at center,
+    rgba(70, 66, 243, 0.3) 0%,
+    rgba(53, 47, 171, 0.2) 40%,
+    rgba(38, 30, 106, 0.05) 71%,
+    rgba(18, 7, 21, 0) 100%
+  );
+
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &.service {
+    opacity: 0.15;
+    top: -200px;
+    left: 0;
+  }
+
+  &.helpful {
+    width: 90%;
+    height: 600px;
+    opacity: 0.4;
+    top: 200px;
+    left: 6%;
+
+    @media (max-width: 768px) {
+      width: 150%;
+      left: -23%;
+    }
+  }
+
+  &.review {
+    opacity: 0.5;
+    width: 285%;
+    bottom: -250px;
+    height: 500px;
+    left: -150px;
+  }
+}

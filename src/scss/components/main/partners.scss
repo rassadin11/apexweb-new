@@ -1,0 +1,13 @@
+.partners__block {
+  &:hover {
+    .blur1 {
+      opacity: 0.35;
+    }
+
+    .blur2 {
+      opacity: 0.4;
+      bottom: -50px;
+      left: -50px;
+    }
+  }
+}
