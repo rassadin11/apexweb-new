@@ -74,22 +74,13 @@ h2.fs-2 {
 
 // circles
 
-.circles {
+.circle-1 {
   position: absolute;
   top: -49vw;
   right: 27.25vw;
   width: 100vw;
   height: 100vw;
-  overflow: hidden;
   border-radius: 50%;
-}
-
-.first-circle {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
   background: radial-gradient(
     90% 90% at -6% 29%,
     rgba(210, 0, 140, 0) 0%,
@@ -119,15 +110,75 @@ h2.fs-2 {
     );
     width: 55%;
     height: 55%;
+
+    transform-origin: center;
+    // animation: moveAround 5s linear infinite;
+  }
+}
+
+.circle-2 {
+  position: absolute;
+  top: 20vw;
+  left: 61.6vw;
+  width: 69.2vw;
+  height: 69.2vw;
+  border-radius: 50%;
+  background: radial-gradient(
+    90% 90% at -6% 29%,
+    rgba(210, 0, 140, 0) 0%,
+    rgba(210, 0, 140, 0.3) 35%,
+    #d20043 100%
+  );
+  z-index: -1;
+  pointer-events: none;
+  overflow: hidden;
+  mix-blend-mode: color-dodge;
+  opacity: 0.5;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    top: -13%;
+    left: -14%;
+    background: radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.75) 0%,
+      rgba(255, 255, 255, 0.7) 15%,
+      rgba(255, 255, 255, 0.2) 50%,
+      rgba(255, 255, 255, 0.08) 60%,
+      rgba(255, 255, 255, 0) 66%
+    );
+    width: 55%;
+    height: 55%;
+  }
+}
+
+@keyframes moveAround {
+  0% {
+    transform: rotate(180deg) translateY(34vw) rotate(-180deg);
+  }
+  25% {
+    transform: rotate(270deg) translateY(34vw) rotate(-270deg);
+  }
+  50% {
+    transform: rotate(360deg) translateY(34vw) rotate(-360deg);
+  }
+  75% {
+    transform: rotate(450deg) translateY(34vw) rotate(-450deg);
+  }
+  100% {
+    transform: rotate(540deg) translateY(34vw) rotate(-540deg);
   }
 }
 
 .main-blur1 {
   position: absolute;
-  top: -25vw;
+  top: -24vw;
   left: -3.5vw;
+  transform: rotate(20deg);
   width: 100vw;
-  height: 60vw;
+  height: 64vw;
   opacity: 0.4;
   z-index: -1;
   background: radial-gradient(
