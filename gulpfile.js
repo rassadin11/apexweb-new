@@ -1,6 +1,5 @@
 import gulp from 'gulp';
 import browserSync from 'browser-sync';
-
 import { paths } from './gulp/config/paths.js';
 import { clean } from './gulp/tasks/clean.js';
 import { svgSprites } from './gulp/tasks/sprite.js';

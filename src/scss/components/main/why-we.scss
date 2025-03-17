@@ -111,17 +111,6 @@
   }
 }
 
-.background-blur {
-  pointer-events: none;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(190, 0, 104, 0.55) 0%,
-    rgba(139, 10, 81, 0.5) 39.5%,
-    rgba(71, 4, 41, 0.3) 70.99%,
-    rgba(26, 1, 14, 0) 100%
-  );
-}
-
 .background-blur.why-we {
   position: absolute;
   top: 50%;

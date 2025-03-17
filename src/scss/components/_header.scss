@@ -1,5 +1,6 @@
 .logo__title {
   font-family: var(--font-unbounded);
+  line-height: 1;
 
   @media (max-width: 768px) {
     font-size: 0.75rem !important;
@@ -7,12 +8,10 @@
 }
 
 .logo {
-  width: 25px;
-  height: 26px;
+  width: 43px;
 
   @media (max-width: 768px) {
-    width: 12px;
-    height: 13px;
+    width: 30px;
   }
 }
 
@@ -118,8 +117,6 @@
   .dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    transform: translate(0, -200px);
-    transition: all 0.3s ease;
     width: calc(100% + 2px);
     left: -1px;
     background: transparent;
@@ -130,7 +127,6 @@
       pointer-events: all;
       opacity: 1;
       visibility: visible;
-      transform: translate(0, 0);
     }
   }
 
@@ -238,7 +234,7 @@
 
     .nav-link {
       border: none;
-      font-size: 18px;
+      font-size: 1.125rem;
       z-index: 2;
       position: relative;
       font-weight: 600;
@@ -249,7 +245,7 @@
         transparent 70%
       );
       color: var(--bs-white);
-      padding: 21px 0;
+      padding: 1.3125rem 0.5rem;
       transition: all 0.3s ease;
     }
   }
