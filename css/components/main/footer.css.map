@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/main/footer.scss","components/main/footer.css"],"names":[],"mappings":"AACE;EACE,kCAAA;ACAJ","file":"components/main/footer.css","sourcesContent":[".header-footer {\r\n  & > *:not(.btn) {\r\n    font-family: var(--font-unbounded);\r\n  }\r\n}\r\n",".header-footer > *:not(.btn) {\n  font-family: var(--font-unbounded);\n}"]}

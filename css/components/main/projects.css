@@ -1,0 +1,101 @@
+.projects__wrapper {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 1100px) {
+  .projects__wrapper {
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
+  }
+}
+.projects__project {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.04);
+}
+.projects__project:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backdrop-filter: blur(2rem);
+  backdrop-filter: blur(2rem);
+  background: rgba(255, 255, 255, 0.04);
+}
+@media (max-width: 768px) {
+  .projects__project:before {
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .links-project__wrapper {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .links-project__wrapper > .links-project__link a {
+    padding: 0 0.35rem !important;
+    white-space: nowrap;
+  }
+}
+
+.project__wrapper {
+  z-index: 5;
+}
+
+.project-projects:hover .blur1 {
+  opacity: 0.35;
+}
+.project-projects:hover .blur2 {
+  width: 100%;
+  opacity: 0.55;
+}
+
+.large-arrow {
+  width: 20px;
+  height: 16px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.large-arrow use {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.links-project__link {
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  font-weight: 500;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.links-project__link:hover {
+  color: var(--bs-black);
+  background: var(--bs-white);
+  border: 2px solid var(--bs-white);
+}
+.links-project__link:hover .large-arrow use {
+  -webkit-filter: invert(1);
+  filter: invert(1);
+}
+@media (max-width: 1550px) {
+  .links-project {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+    -ms-flex-direction: column !important;
+    flex-direction: column !important;
+    gap: 1.3rem;
+  }
+  .links-project > .links-project__link a {
+    -webkit-box-pack: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+  }
+}
+
+.all-projects {
+  font-size: 18px;
+}/*# sourceMappingURL=projects.css.map */
