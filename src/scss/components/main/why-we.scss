@@ -7,7 +7,8 @@
   }
 
   & img {
-    height: 36.5vh;
+    height: 38.5vh;
+    max-height: 400px;
     object-fit: cover;
     width: 100%;
     margin: 0 auto;
@@ -44,7 +45,7 @@
 
   &__block {
     position: relative;
-    border: 2px solid rgba(255, 255, 255, 0.04);
+    border: 2px solid var(--white-background);
 
     &:before {
       content: "";
@@ -54,10 +55,10 @@
       width: 100%;
       height: 100%;
       backdrop-filter: blur(2rem);
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--white-background);
 
       @media (max-width: 768px) {
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--arrow-border);
         border-radius: 1rem !important;
       }
     }
@@ -78,7 +79,7 @@
 
   &__title {
     font-weight: 500;
-    font-size: 28px;
+    font-size: 1.75rem;
     margin-top: 9rem;
     line-height: 1.3;
 
@@ -102,7 +103,7 @@
   }
 
   &__description {
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--light-color);
     line-height: 1.2;
 
     @media (max-width: 768px) {
@@ -112,7 +113,6 @@
 }
 
 .background-blur.why-we {
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -127,7 +127,6 @@
 }
 
 .background-blur.partners {
-  position: absolute;
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -144,7 +143,6 @@
 }
 
 .background-blur.projects {
-  position: absolute;
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);

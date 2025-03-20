@@ -10,13 +10,21 @@
     #d2008c -47.95%,
     #e6007e 109.59%
   );
+  --tg-color: #61cfff;
+  --tg-border: rgba(118, 246, 255, 0.08);
   --btn-border: rgba(255, 255, 255, 0.1);
   --btn-box-shadow-s: rgba(237, 24, 113, 0.4);
   --btn-box-shadow-e: rgba(230, 0, 126, 0.2);
   --border-gray: rgba(255, 255, 255, 0.2);
   --gray-color: #949494;
   --light-transparent-color: rgba(255, 255, 255, 0.3);
+  --mail-background: rgba(255, 255, 255, 0.08);
+  --blue-border: rgba(58, 144, 255, 0.08);
   --light-color: rgba(255, 255, 255, 0.8);
+  --arrow-background: rgba(255, 255, 255, 0.02);
+  --arrow-border: rgba(255, 255, 255, 0.06);
+  --arrow-box-shadow1: rgba(255, 255, 255, 0.25);
+  --arrow-box-shadow2: rgba(0, 0, 0, 0.16);
   --font-inter: "Inter";
   --font-unbounded: "Unbounded";
 }
@@ -37,6 +45,10 @@ body {
   max-width: 1782px;
   padding: 0 1.3125rem;
   position: relative;
+
+  @media (max-width: 768px) {
+    padding: 0 1rem;
+  }
 }
 
 p {
@@ -61,7 +73,7 @@ ul {
 h2.fs-2 {
   font-weight: 600;
   position: relative;
-  z-index: 100;
+  z-index: 0;
 
   @media (max-width: 992px) {
     font-size: 2rem !important;
@@ -70,6 +82,14 @@ h2.fs-2 {
   @media (max-width: 550px) {
     font-size: 1.3125rem !important;
   }
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.main {
+  padding-top: 7rem;
 }
 
 // circles

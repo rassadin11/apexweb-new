@@ -1,6 +1,90 @@
-.header-footer {
+.header-footer:not(.main-footer) {
+  border-bottom: 1px solid var(--light-transparent-color);
+
+  & > *:first-child {
+    grid-column: 1 / 3;
+  }
+
+  & > *:nth-child(2) {
+    grid-column: 3 / 6;
+  }
+
+  & > *:nth-child(3) {
+    grid-column: 6 / 9;
+  }
+
+  & > *:last-child {
+    grid-column: 9 / 12;
+  }
+
+  @media (max-width: 1300px) {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem !important;
+
+    @media (max-width: 992px) {
+      gap: 0 !important;
+    }
+
+    & > * {
+      flex: 0 0 auto;
+
+      @media (max-width: 992px) {
+        flex: 0 0 100%;
+        justify-content: center;
+      }
+    }
+
+    & > *:first-child {
+      flex: 0 0 100%;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 0 auto;
+      flex: 0 0 50%;
+
+      @media (max-width: 992px) {
+        flex: 0 0 100%;
+      }
+    }
+  }
+
   & > *:not(.btn) {
     font-family: var(--font-unbounded);
+  }
+}
+
+.header-footer.main-footer {
+  grid-template-columns: repeat(10, 1fr);
+
+  & > *:first-child {
+    grid-column: 1 / 4;
+
+    @media (max-width: 1200px) {
+      grid-column: 1 / 5;
+    }
+  }
+
+  & > *:nth-child(2) {
+    grid-column: 4 / 11;
+
+    @media (max-width: 1200px) {
+      grid-column: 5 / 11;
+    }
+  }
+
+  & > *:last-child {
+    grid-column: 1 / 11;
+  }
+
+  @media (max-width: 992px) {
+    & > * {
+      grid-column: 1 / 11 !important;
+    }
   }
 }
 
@@ -15,7 +99,11 @@
 }
 
 .footer {
-  position: relative;
+  & .logo__title {
+    @media (max-width: 768px) {
+      font-size: 1.3125rem !important;
+    }
+  }
 
   &::before {
     content: "";
@@ -33,4 +121,100 @@
     // );
     opacity: 0.4;
   }
+}
+
+.footer-tg {
+  width: 33px;
+  height: 29px;
+  color: var(--bs-white);
+}
+
+.footer-vk {
+  width: 30px;
+  height: 30px;
+  color: var(--bs-white);
+}
+
+.footer-github {
+  width: 30px;
+  height: 30px;
+}
+
+.header-footer.contacts {
+  grid-template-columns: repeat(11, 1fr);
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.menu-footer {
+  &__title {
+    font-weight: 500;
+    font-size: 1.125rem;
+  }
+
+  &__link {
+    font-size: 1rem;
+
+    a {
+      color: rgba(255, 255, 255, 0.8);
+    }
+  }
+}
+
+.main-footer {
+  & a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__description a {
+    color: var(--bs-pink);
+    font-weight: 500;
+  }
+
+  &__wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    &:not(:last-child):before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 75%;
+      height: 1px;
+      background-color: var(--light-transparent-color);
+    }
+  }
+
+  &__text {
+    font-size: 1.125rem;
+  }
+}
+
+.background-footer-blur {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 180%;
+  z-index: -1;
+
+  // background: radial-gradient(
+  //   circle at bottom,
+  //   #4642f3 0%,
+  //   #352fab 39.5%,
+  //   #261e6a 70.99%,
+  //   #120715 100%
+  // );
 }

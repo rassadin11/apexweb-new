@@ -9,7 +9,7 @@
 
   &__project {
     position: relative;
-    border: 2px solid rgba(255, 255, 255, 0.04);
+    border: 2px solid var(--white-background);
 
     &:before {
       content: "";
@@ -19,10 +19,10 @@
       width: 100%;
       height: 100%;
       backdrop-filter: blur(2rem);
-      background: rgba(255, 255, 255, 0.04);
+      background: var(--white-background);
 
       @media (max-width: 768px) {
-        background: rgba(255, 255, 255, 0.06);
+        background: var(--arrow-border);
         border-radius: 1rem !important;
       }
     }
@@ -100,5 +100,5 @@
 }
 
 .all-projects {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
