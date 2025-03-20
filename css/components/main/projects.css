@@ -10,7 +10,7 @@
 }
 .projects__project {
   position: relative;
-  border: 2px solid rgba(255, 255, 255, 0.04);
+  border: 2px solid var(--white-background);
 }
 .projects__project:before {
   content: "";
@@ -21,11 +21,11 @@
   height: 100%;
   -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--white-background);
 }
 @media (max-width: 768px) {
   .projects__project:before {
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--arrow-border);
     border-radius: 1rem !important;
   }
 }
@@ -97,5 +97,5 @@
 }
 
 .all-projects {
-  font-size: 18px;
+  font-size: 1.125rem;
 }/*# sourceMappingURL=projects.css.map */

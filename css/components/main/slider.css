@@ -253,6 +253,7 @@
   bottom: 0;
   border: 0;
   background-color: transparent;
+  z-index: 4000;
   cursor: pointer;
   padding: 0;
   visibility: hidden;

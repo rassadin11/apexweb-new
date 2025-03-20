@@ -1,5 +1,5 @@
 .review-block {
-  border: 2px solid rgba(255, 255, 255, 0.04);
+  border: 2px solid var(--white-background);
 }
 .review-block:before {
   content: "";
@@ -8,7 +8,7 @@
   left: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--white-background);
   -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
 }
@@ -20,16 +20,16 @@
 }
 
 .block-review__text {
-  background: rgba(255, 255, 255, 0.06);
-  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: var(--arrow-border);
+  border: 2px solid var(--white-background);
   z-index: 5;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--light-color);
 }
 .block-review__wrapper {
   z-index: 5;
 }
 .block-review__description {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--light-color);
 }
 @media (max-width: 992px) {
   .block-review__author {

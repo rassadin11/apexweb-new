@@ -4506,6 +4506,51 @@ const swiffyslider = {
 window.swiffyslider = swiffyslider, document.currentScript.hasAttribute("data-noinit") || (document.currentScript.hasAttribute("defer") ? swiffyslider.init() : document.onreadystatechange = () => {
   "interactive" === document.readyState && swiffyslider.init();
 });
+const swiffysliderextensions = {
+  version: "1.6.0",
+  draggingtimer: null,
+  init() {
+    let e = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : document.body;
+    for (const s of e.querySelectorAll(".swiffy-slider")) this.initSlider(s);
+  },
+  initSlider(e) {
+    e.classList.contains("slider-nav-mousedrag") && e.addEventListener("mousedown", s => this.handleMouseDrag(s, e), {
+      passive: !0
+    });
+  },
+  handleMouseDrag(e, s) {
+    if (e.srcElement.classList.contains("slider-nav") || e.srcElement.parentElement.classList.contains("slider-indicators")) return;
+    const t = s.querySelector(".slider-container");
+    s.classList.contains("dragging") && clearTimeout(this.draggingtimer), t.style.cursor = "grabbing", s.classList.add("dragging");
+    const i = t.scrollLeft,
+      n = e.clientX,
+      r = t.children[0].offsetWidth + parseInt(window.getComputedStyle(t).columnGap),
+      o = r * (t.children.length - 1),
+      l = t.scrollLeft;
+    let d = l;
+    const a = e => {
+      const s = e.clientX - n,
+        a = i - 1.8 * s;
+      a > 0 && a <= o && (t.scrollLeft = a, s < 0 ? d = o <= l ? l : t.scrollLeft + (r + 1.8 * s) : l > 0 && (d = t.scrollLeft - (r - 1.8 * s)));
+    };
+    t.addEventListener("mousemove", a, {
+      passive: !0
+    }), document.addEventListener("mouseup", () => {
+      t.removeEventListener("mousemove", a), t.style.cursor = null, d < 0 && (d = 0), t.scroll({
+        left: d,
+        behavior: "smooth"
+      }), this.draggingtimer = setTimeout(() => {
+        s.classList.remove("dragging");
+      }, 550);
+    }, {
+      once: !0,
+      passive: !0
+    });
+  }
+};
+window.swiffyslider.extensions = swiffysliderextensions, document.currentScript.hasAttribute("data-noinit") || window.addEventListener("load", () => {
+  swiffyslider.extensions.init();
+});
 
 /***/ })
 
@@ -4797,10 +4842,12 @@ burger.addEventListener('click', () => {
   h_wrapper.classList.toggle('active');
   burger.classList.toggle('active');
   navbar.classList.toggle('active');
+  document.body.classList.toggle('hidden');
 });
 cross.addEventListener('click', () => {
   burger.classList.toggle('active');
   navbar.classList.toggle('active');
+  document.body.classList.toggle('hidden');
   setTimeout(() => {
     h_wrapper.classList.toggle('active');
     m_history = [];
@@ -4822,6 +4869,27 @@ let telephoneMasks = [];
 elements.forEach(element => {
   let mask = new imask__WEBPACK_IMPORTED_MODULE_1__["default"](element, maskOptions);
   telephoneMasks.push(mask);
+});
+
+// mail
+let elements2 = document.querySelectorAll('#email');
+let maskOptions2 = {
+  mask: function (value) {
+    if (/^[a-z0-9_\.-]+$/.test(value)) return true;
+    if (/^[a-z0-9_\.-]+@$/.test(value)) return true;
+    if (/^[a-z0-9_\.-]+@[a-z0-9-]+$/.test(value)) return true;
+    if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.$/.test(value)) return true;
+    if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}$/.test(value)) return true;
+    if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.$/.test(value)) return true;
+    if (/^[a-z0-9_\.-]+@[a-z0-9-]+\.[a-z]{1,4}\.[a-z]{1,4}$/.test(value)) return true;
+    return false;
+  },
+  lazy: false
+};
+let emailMasks = [];
+elements2.forEach(element2 => {
+  let mask2 = new imask__WEBPACK_IMPORTED_MODULE_1__["default"](element2, maskOptions2);
+  emailMasks.push(mask2);
 });
 })();
 

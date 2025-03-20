@@ -51,10 +51,10 @@
   top: -180px;
 }
 .popular-services__arrow {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  -webkit-box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0.25), 0px 2px 4px rgba(0, 0, 0, 0.16);
-  box-shadow: inset 0px 0px 0px rgba(255, 255, 255, 0.25), 0px 2px 4px rgba(0, 0, 0, 0.16);
+  background: var(--arrow-background);
+  border: 1px solid var(--arrow-border);
+  -webkit-box-shadow: inset 0px 0px 0px var(--arrow-box-shadow1), 0px 2px 4px var(--arrow-box-shadow2);
+  box-shadow: inset 0px 0px 0px var(--arrow-box-shadow1), 0px 2px 4px var(--arrow-box-shadow2);
   border-radius: 50%;
   display: inline;
 }

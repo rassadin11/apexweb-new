@@ -1,6 +1,6 @@
 .title {
   font-family: var(--font-unbounded);
-  font-size: 51px;
+  font-size: 3.1875rem;
 }
 @media (max-width: 1200px) {
   .title {
@@ -20,12 +20,8 @@
 
 .main-section {
   z-index: 4;
-  position: relative;
 }
 
-.main-section__wrapper {
-  margin: 0 9rem;
-}
 @media (max-width: 1800px) {
   .main-section__wrapper {
     margin: 0;
@@ -70,11 +66,11 @@
 }
 
 .main-section__marks {
-  max-width: 250px;
+  max-width: 280px;
 }
 
 .h-mark {
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--btn-border);
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
