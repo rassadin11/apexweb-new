@@ -17158,8 +17158,14 @@ input[type=checkbox]:before {
 }
 
 .big-fire {
-  height: 36px;
-  width: 40px;
+  height: 40px;
+  width: 36px;
+}
+@media (max-width: 768px) {
+  .big-fire {
+    width: 27px;
+    height: 30px;
+  }
 }
 
 .big-aim,
@@ -17167,10 +17173,23 @@ input[type=checkbox]:before {
   width: 40px;
   height: 40px;
 }
+@media (max-width: 768px) {
+  .big-aim,
+  .big-strange {
+    width: 30px;
+    height: 30px;
+  }
+}
 
 .big-brush {
   width: 36px;
   height: 36px;
+}
+@media (max-width: 768px) {
+  .big-brush {
+    width: 27px;
+    height: 27px;
+  }
 }
 
 .blog-sidebar__list a.active {
