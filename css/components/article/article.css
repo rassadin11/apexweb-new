@@ -1,21 +1,25 @@
-.article-wrapper {
-  -ms-grid-columns: (1fr)[12];
-  grid-template-columns: repeat(12, 1fr);
-}
-.article-wrapper h2 {
+.article-wrapper h2,
+.blog h2 {
   scroll-margin-top: 9rem;
 }
 @media (max-width: 992px) {
-  .article-wrapper h2 {
+  .article-wrapper h2,
+  .blog h2 {
     scroll-margin-top: 6rem;
     font-size: 1.75rem !important;
   }
 }
 @media (max-width: 768px) {
-  .article-wrapper h2 {
+  .article-wrapper h2,
+  .blog h2 {
     scroll-margin-top: 5rem;
     font-size: 1.3125rem !important;
   }
+}
+
+.article-wrapper {
+  -ms-grid-columns: (1fr)[12];
+  grid-template-columns: repeat(12, 1fr);
 }
 @media (max-width: 768px) {
   .article-wrapper p {

@@ -195,6 +195,11 @@
 .main-footer a:hover {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .main-footer__item:first-child {
+    font-size: 1rem;
+  }
+}
 .main-footer__description a {
   color: var(--bs-pink);
   font-weight: 500;
