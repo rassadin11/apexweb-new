@@ -2,13 +2,6 @@
   -ms-grid-columns: (1fr)[12];
   grid-template-columns: repeat(12, 1fr);
 }
-@media (max-width: 992px) {
-  .article-wrapper {
-    display: -webkit-box !important;
-    display: -ms-flexbox !important;
-    display: flex !important;
-  }
-}
 .article-wrapper h2 {
   scroll-margin-top: 9rem;
 }
@@ -108,8 +101,6 @@
 }
 .article-main__info {
   font-size: 1rem;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
 }
 @media (max-width: 768px) {
   .article-main__info {
@@ -207,7 +198,7 @@
   position: sticky;
   left: 0;
   z-index: 4;
-  background: #12121c;
+  background: #0b0b15;
 }
 
 .table-fixed {

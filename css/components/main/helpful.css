@@ -1,7 +1,9 @@
-.helpful .project-projects:hover .blur3 {
+.helpful .project-projects:hover .blur3,
+.blog .project-projects:hover .blur3 {
   opacity: 0.45;
 }
-.helpful .project-projects:hover .blur4 {
+.helpful .project-projects:hover .blur4,
+.blog .project-projects:hover .blur4 {
   opacity: 0.6;
 }
 

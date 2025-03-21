@@ -81,7 +81,7 @@
 }
 .blur3.helpful {
   width: 80%;
-  top: -100px;
+  top: -16%;
   left: 0;
   opacity: 0.2;
 }
@@ -110,7 +110,7 @@
   width: 90%;
   height: 600px;
   opacity: 0.4;
-  top: 200px;
+  bottom: -38%;
   left: 6%;
 }
 @media (max-width: 768px) {
