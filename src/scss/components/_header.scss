@@ -41,6 +41,12 @@
   left: 50%;
   transform: translateX(-50%);
 
+  .svg-wrapper {
+    svg {
+      color: var(--bs-pink);
+    }
+  }
+
   &__wrapper {
     &::before {
       content: "";
