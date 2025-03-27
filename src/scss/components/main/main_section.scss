@@ -66,3 +66,12 @@
     color: var(--bs-black);
   }
 }
+
+.main-section__background {
+  overflow: hidden;
+  width: 100vw;
+  top: 0;
+  height: 100vh;
+  position: absolute;
+  pointer-events: none;
+}

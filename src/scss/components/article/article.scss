@@ -1,6 +1,5 @@
-.article-wrapper {
-  grid-template-columns: repeat(12, 1fr);
-
+.article-wrapper,
+.blog {
   h2 {
     scroll-margin-top: 9rem;
 
@@ -14,7 +13,10 @@
       font-size: 1.3125rem !important;
     }
   }
+}
 
+.article-wrapper {
+  grid-template-columns: repeat(12, 1fr);
   p {
     @media (max-width: 768px) {
       font-size: 1rem;
@@ -58,6 +60,7 @@
       display: block;
       position: relative;
       padding-left: 2rem;
+      padding-right: 1rem;
       line-height: 1.2;
       font-size: 1rem;
 

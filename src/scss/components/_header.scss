@@ -8,10 +8,10 @@
 }
 
 .logo {
-  width: 43px;
+  width: 80px;
 
   @media (max-width: 768px) {
-    width: 30px;
+    width: 60px;
   }
 }
 
@@ -56,8 +56,8 @@
       width: 100%;
       height: 100%;
       border-radius: 1rem;
-      background: var(--white-background);
       border: 1px solid var(--border-gray);
+      background: var(--white-background);
       backdrop-filter: blur(2rem);
       z-index: -1;
     }
@@ -127,11 +127,11 @@
   .dropdown-menu {
     opacity: 0;
     visibility: hidden;
-    width: calc(100% + 2px);
-    left: -1px;
+    width: 100%;
+    left: 0;
     background: transparent;
-    border-top: none;
     pointer-events: none;
+    border: none;
 
     &.active {
       pointer-events: all;
@@ -151,7 +151,7 @@
       visibility: hidden;
       transform: translate(-100%, 0);
       transition: all 0.3s ease;
-      background: var(--menu-background);
+      background: var(--menu-mobile-background);
       z-index: 10000;
       display: flex;
       flex-direction: column;
@@ -198,9 +198,21 @@
 }
 
 .header-tabs {
-  background: var(--menu-background);
+  position: relative;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
+
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: var(--menu-background);
+    backdrop-filter: blur(50px);
+  }
 
   .header-wrap-tabs {
     grid-template-columns: repeat(4, 1fr);
@@ -329,6 +341,8 @@
 
 .default-border {
   border: 1px solid var(--border-gray);
+  border-top: none;
+  margin-top: 1px;
 }
 
 .btn-pink {
@@ -348,12 +362,16 @@
 
 .svg-wrapper {
   background: var(--svg-background);
-  border: 1px solid var(--light-pink);
+  border: 3px solid var(--light-pink);
   border-radius: 0.375rem;
   display: inline;
   padding: 0.625rem;
   width: fit-content;
   z-index: 0;
+
+  @media (max-width: 768px) {
+    border: 1px solid var(--light-pink);
+  }
 
   &.we {
     padding: 1rem;
