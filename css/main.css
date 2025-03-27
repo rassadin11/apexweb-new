@@ -15418,6 +15418,7 @@ h2.fs-2, .fs-2.h2 {
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%);
+  overflow: visible;
 }
 .header .svg-wrapper svg {
   color: var(--bs-pink);
