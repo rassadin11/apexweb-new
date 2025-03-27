@@ -1,0 +1,1 @@
+{"version":3,"sources":["components/service/faq.scss","components/service/faq.css"],"names":[],"mappings":"AAAA;EACE,qBAAA;ACCF","file":"components/service/faq.css","sourcesContent":[".default-list {\r\n  list-style-type: disc;\r\n}\r\n",".default-list {\n  list-style-type: disc;\n}"]}

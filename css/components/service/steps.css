@@ -1,0 +1,72 @@
+.steps-wrapper {
+  max-width: 618px;
+}
+@media (max-width: 768px) {
+  .steps-wrapper {
+    max-width: 340px;
+    line-height: 1.25;
+  }
+}
+
+.item-steps__number {
+  min-width: 84px;
+  height: 84px;
+  background: rgba(244, 36, 123, 0.2);
+  border: 3px solid rgba(244, 36, 123, 0.2);
+  color: var(--bs-pink);
+}
+@media (max-width: 768px) {
+  .item-steps__number {
+    min-width: 40px;
+    height: 40px;
+    border: 2px solid rgba(244, 36, 123, 0.2);
+  }
+}
+@media (max-width: 768px) {
+  .item-steps__text {
+    font-size: 1.125rem !important;
+    font-weight: 600;
+  }
+}
+
+.number_one {
+  width: 18px;
+  height: 38px;
+  margin-left: -5px;
+}
+@media (max-width: 768px) {
+  .number_one {
+    width: 9px;
+    height: 19px;
+  }
+}
+.number_two {
+  width: 26px;
+  height: 38px;
+}
+@media (max-width: 768px) {
+  .number_two {
+    width: 13px;
+    height: 19px;
+  }
+}
+.number_four {
+  width: 30px;
+  height: 38px;
+}
+@media (max-width: 768px) {
+  .number_four {
+    width: 15px;
+    height: 19px;
+  }
+}
+.number_five, .number_three {
+  width: 28px;
+  height: 38px;
+}
+@media (max-width: 768px) {
+  .number_five, .number_three {
+    width: 14px;
+    height: 19px;
+  }
+}/*# sourceMappingURL=steps.css.map */

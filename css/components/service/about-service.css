@@ -1,0 +1,59 @@
+.about-service {
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+}
+@media (max-width: 992px) {
+  .about-service {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+}
+.about-service__description {
+  background: rgba(255, 255, 255, 0.04);
+  border: 2px solid rgba(255, 255, 255, 0.04);
+  -webkit-backdrop-filter: blur(36px);
+  backdrop-filter: blur(36px);
+}
+@media (max-width: 768px) {
+  .about-service__description > *:first-child {
+    font-size: 1.3125rem !important;
+  }
+  .about-service__description > *:not(:first-child) {
+    font-size: 1rem !important;
+  }
+}
+.about-service__title {
+  font-weight: 600;
+}
+.about-service__list {
+  list-style-type: disc;
+}
+.about-service__image img {
+  -o-object-fit: cover;
+  object-fit: cover;
+  max-width: 100%;
+  height: 100%;
+}
+@media (max-width: 992px) {
+  .about-service__image img {
+    width: 100%;
+    min-height: 208px;
+  }
+}
+.about-service.background-blur {
+  width: 150%;
+  height: 350%;
+  opacity: 0.7;
+  left: -22%;
+  top: -60%;
+  z-index: 0;
+}
+@media (max-width: 768px) {
+  .about-service.background-blur {
+    width: 250%;
+    opacity: 0.4;
+    left: -82%;
+  }
+}/*# sourceMappingURL=about-service.css.map */
