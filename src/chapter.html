@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body>
+    <div>
+        @include('partials/header.html')
+        <main class="main container mb-10">
+            @include('partials/chapter/main_section.html')
+            @include('partials/chapter/description.html')
+            @include('partials/chapter/services.html')
+            @include('partials/chapter/advertisment.html')
+            @include('partials/chapter/why-apexweb.html')
+            @include('partials/chapter/helpful.html')
+            @include('partials/chapter/faq.html')
+            @include('partials/form.html')
+        </main>
+
+        @include('partials/footer.html')
+        <div class="main-section__background">
+            <div class="background-wrap"></div>
+
+            <div class="main-blur1"></div>
+            <div class="main-blur2"></div>
+
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+        </div>
+
+        <!-- @include('html/h1.html') пример include -->
+    </div>
+</body>
+
+</html>

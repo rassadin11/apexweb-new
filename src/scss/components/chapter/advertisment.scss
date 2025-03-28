@@ -1,0 +1,15 @@
+.advertisment-wrapper {
+  grid-template-columns: 1fr 1fr;
+
+  @media (max-width: 1400px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.advertisment {
+  &__item:first-child {
+    background: rgba(255, 255, 255, 0.04);
+    border: 2px solid rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(36px);
+  }
+}

@@ -203,7 +203,17 @@
   position: sticky;
   left: 0;
   z-index: 4;
-  background: #0b0b15;
+
+  &:before {
+    content: "";
+    background: #0b0b15;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: calc(100% - 1px);
+    z-index: -1;
+  }
 }
 
 .table-fixed {

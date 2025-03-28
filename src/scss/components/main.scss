@@ -55,6 +55,10 @@ button {
   @media (max-width: 768px) {
     padding: 0 1rem;
   }
+
+  @media (max-width: 1780px) {
+    overflow: hidden;
+  }
 }
 
 p {
