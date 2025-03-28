@@ -50,6 +50,9 @@
   top: -60%;
   z-index: 0;
 }
+.about-service.background-blur.less {
+  opacity: 0.3;
+}
 @media (max-width: 768px) {
   .about-service.background-blur {
     width: 250%;
