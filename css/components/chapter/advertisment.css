@@ -11,4 +11,10 @@
 
 .item-advertisment__text {
   font-size: 1rem !important;
+}
+
+@media (max-width: 768px) {
+  .advertisment__item > p {
+    font-size: 1rem;
+  }
 }/*# sourceMappingURL=advertisment.css.map */

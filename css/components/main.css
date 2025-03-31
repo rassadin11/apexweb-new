@@ -156,6 +156,14 @@ h2.fs-2 {
   -ms-transform-origin: center;
   transform-origin: center;
 }
+@media (max-width: 992px) {
+  .circle-1 {
+    top: -8%;
+    right: 38%;
+    width: 100vh;
+    min-height: 100vh;
+  }
+}
 
 .circle-2 {
   position: absolute;
@@ -181,6 +189,19 @@ h2.fs-2 {
   width: 55%;
   height: 55%;
 }
+@media (max-width: 992px) {
+  .circle-2 {
+    top: 29%;
+    left: 60%;
+    width: 69.2vh;
+    height: 69.2vh;
+  }
+}
+@media (max-width: 768px) {
+  .circle-2 {
+    left: 50%;
+  }
+}
 
 .main-blur1 {
   position: absolute;
@@ -194,6 +215,25 @@ h2.fs-2 {
   opacity: 0.4;
   z-index: -1;
   background: radial-gradient(50% 50% at 50% 50%, rgb(237, 24, 113) 0%, rgba(237, 24, 113, 0.5) 39.5%, rgba(237, 24, 113, 0.3) 70.99%, rgba(237, 24, 113, 0) 100%);
+}
+@media (max-width: 992px) {
+  .main-blur1 {
+    position: absolute;
+    top: -30vw;
+    left: -32.5vw;
+    -webkit-transform: rotate(20deg);
+    -ms-transform: rotate(20deg);
+    transform: rotate(20deg);
+    width: 150vw;
+    height: 106vh;
+    opacity: 0.6;
+  }
+}
+@media (max-width: 768px) {
+  .main-blur1 {
+    width: 250vw;
+    left: -68.5vw;
+  }
 }
 
 .background-blur {
@@ -236,8 +276,9 @@ h2.fs-2 {
 }
 @media (max-width: 768px) {
   .background-blue-blur.helpful {
-    opacity: 0.9;
+    opacity: 0.7;
     top: 20%;
+    width: 200%;
   }
 }
 .background-blue-blur.reviews {

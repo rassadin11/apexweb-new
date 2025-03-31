@@ -179,7 +179,7 @@
 }
 
 .table-responsive {
-  border: 2px solid var(--white-background);
+  border: 2px solid var(--table-background);
 }
 .table-responsive td {
   font-size: 1rem;

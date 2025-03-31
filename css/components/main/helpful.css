@@ -16,6 +16,7 @@
 @media (max-width: 992px) {
   .project__wrapper img {
     min-height: 250px;
+    max-height: 320px;
   }
 }
 @media (max-width: 768px) {

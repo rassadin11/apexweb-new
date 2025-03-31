@@ -87,7 +87,7 @@ input[type=checkbox]:before {
 }
 
 .main-form {
-  border: 2px solid rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--white-background);
 }
 .main-form:before {
   content: "";
@@ -100,8 +100,8 @@ input[type=checkbox]:before {
   z-index: -1;
 }
 .main-form__button {
-  background: -webkit-gradient(linear, left top, right top, from(#4642f3), to(#3431c6));
-  background: linear-gradient(90deg, #4642f3, #3431c6);
+  background: -webkit-gradient(linear, left top, right top, from(var(--blockquote-border)), to(#3431c6));
+  background: linear-gradient(90deg, var(--blockquote-border), #3431c6);
   background-size: 300% 300%;
   -webkit-transition: -webkit-box-shadow 0.3s ease;
   transition: -webkit-box-shadow 0.3s ease;
@@ -135,12 +135,22 @@ input[type=checkbox]:before {
 }
 .main-form__input {
   outline: none;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(70, 66, 243, 0.2);
+  background: var(--btn-border);
+  border: 2px solid var(--blockquote-background);
   color: var(--bs-white);
 }
+@media (max-width: 768px) {
+  .main-form__input {
+    font-size: 1rem;
+  }
+}
 .main-form__input:placeholder {
-  color: rgba(255, 255, 255, 0.24);
+  color: var(--border-gray);
+}
+@media (max-width: 768px) {
+  .main-form__input:placeholder {
+    font-size: 1rem;
+  }
 }
 .main-form__checkbox {
   font-size: 1rem;

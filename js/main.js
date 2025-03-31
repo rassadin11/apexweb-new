@@ -4711,7 +4711,6 @@ window.onresize = () => {
 // mobile menu generator
 
 const mobileTitle = document.querySelector('.mobile-menu__title');
-const mobileBack = document.querySelector('.mobile-burger-arrow');
 const attrLayouts = document.querySelectorAll("[data-layout]");
 const initialMenu = document.querySelectorAll('[data-initial-layout]');
 const mobileMenu = {};
@@ -4771,7 +4770,7 @@ function menuGenerator(elements, mainMenuField) {
     if (elements[i].length === 2) {
       mainMenuField.insertAdjacentHTML(`beforeend`, `
                 <li class="nav-item d-flex align-items-center gap-2" data-layout="${elements[i][1]}">
-                    <a href="#" class="nav-link p-0 p-lg-2">${elements[i][0]}</a>
+                    <span class="nav-link p-0 p-lg-2">${elements[i][0]}</span>
                     <svg class="arrow">
                         <use href="./img/svg/sprite.svg#arrow"></use>
                     </svg>
