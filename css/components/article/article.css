@@ -17,6 +17,20 @@
   }
 }
 
+.block-anchor {
+  scroll-margin-top: 9rem;
+}
+@media (max-width: 992px) {
+  .block-anchor {
+    scroll-margin-top: 6rem;
+  }
+}
+@media (max-width: 768px) {
+  .block-anchor {
+    scroll-margin-top: 5rem;
+  }
+}
+
 .article-wrapper {
   -ms-grid-columns: (1fr)[12];
   grid-template-columns: repeat(12, 1fr);
@@ -67,6 +81,8 @@
   padding-right: 1rem;
   line-height: 1.2;
   font-size: 1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 .article-sidebar__list a.active {
   background: rgba(255, 255, 255, 0.1);

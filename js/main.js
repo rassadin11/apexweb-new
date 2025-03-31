@@ -4891,6 +4891,38 @@ elements2.forEach(element2 => {
   let mask2 = new imask__WEBPACK_IMPORTED_MODULE_1__["default"](element2, maskOptions2);
   emailMasks.push(mask2);
 });
+
+// Получаем все якорные ссылки из блока навигации
+const navLinks = document.querySelectorAll('.table_of_context a[href^="#"]');
+console.log(navLinks);
+
+// Получаем все секции, на которые ссылаются якоря
+const sections = Array.from(navLinks).map(link => {
+  const id = link.getAttribute('href').substring(1);
+  return document.getElementById(id);
+}).filter(Boolean);
+function activateCurrentLink() {
+  const scrollPosition = window.scrollY + 100; // +100 для небольшого запаса
+
+  sections.forEach((target, idx) => {
+    const {
+      top
+    } = target.getBoundingClientRect();
+    const targetTop = top + window.scrollY;
+    const targetHeight = target.offsetHeight;
+
+    // Проверяем, виден ли элемент
+    if (scrollPosition >= targetTop && scrollPosition < targetTop + targetHeight) {
+      navLinks.forEach(l => l.classList.remove('active'));
+      navLinks[idx].classList.add('active');
+    }
+  });
+}
+
+// Вызываем функцию при загрузке и при прокрутке
+window.addEventListener('load', activateCurrentLink);
+activateCurrentLink();
+window.addEventListener('scroll', activateCurrentLink);
 })();
 
 /******/ })()
