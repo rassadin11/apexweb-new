@@ -4902,7 +4902,7 @@ const sections = Array.from(navLinks).map(link => {
   return document.getElementById(id);
 }).filter(Boolean);
 function activateCurrentLink() {
-  const scrollPosition = window.scrollY + 100; // +100 для небольшого запаса
+  const scrollPosition = window.scrollY + 150; // +100 для небольшого запаса
 
   sections.forEach((target, idx) => {
     const {
