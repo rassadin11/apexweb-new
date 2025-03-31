@@ -2645,7 +2645,7 @@ progress {
 .table {
   --bs-table-color: rgb(255, 255, 255);
   --bs-table-bg: transparent;
-  --bs-table-border-color: rgba(255, 255, 255, 0.08);
+  --bs-table-border-color: #15151e;
   --bs-table-accent-bg: transparent;
   --bs-table-striped-color: rgb(255, 255, 255);
   --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
@@ -17362,6 +17362,12 @@ input[type=checkbox]:before {
   }
 }
 
+@media (max-width: 768px) {
+  .blog-description {
+    font-size: 1rem;
+  }
+}
+
 .blog .links-project__link {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -17757,4 +17763,8 @@ input[type=checkbox]:before {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+}
+
+.item-advertisment__text {
+  font-size: 1rem !important;
 }/*# sourceMappingURL=main.css.map */

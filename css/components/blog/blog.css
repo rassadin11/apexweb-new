@@ -106,6 +106,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .blog-description {
+    font-size: 1rem;
+  }
+}
+
 .blog .links-project__link {
   width: -webkit-fit-content;
   width: -moz-fit-content;
