@@ -219,14 +219,14 @@ h2.fs-2 {
 @media (max-width: 992px) {
   .main-blur1 {
     position: absolute;
-    top: -30vw;
+    top: -46vw;
     left: -32.5vw;
     -webkit-transform: rotate(20deg);
     -ms-transform: rotate(20deg);
     transform: rotate(20deg);
     width: 150vw;
     height: 106vh;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 }
 @media (max-width: 768px) {
