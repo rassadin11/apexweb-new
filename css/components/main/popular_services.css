@@ -19,6 +19,7 @@
   border: 2px solid rgba(255, 255, 255, 0.04);
   -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
+  min-height: 428px;
 }
 .popular-services__block *:not(.service) {
   z-index: 5;
