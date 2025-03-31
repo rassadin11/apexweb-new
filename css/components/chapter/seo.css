@@ -32,10 +32,6 @@
 }
 
 .seo-wrapper__item {
-  background: var(--white-background);
-  border: 2px solid var(--white-background);
-  -webkit-backdrop-filter: blur(36px);
-  backdrop-filter: blur(36px);
   min-height: 245px;
 }
 .seo-wrapper__item:hover .seo-block.one {

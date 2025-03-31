@@ -49,6 +49,11 @@
   }
 }
 
+@media (max-width: 768px) {
+  .blog-sidebar__list {
+    font-size: 1rem !important;
+  }
+}
 .blog-sidebar__list a.active {
   background: var(--btn-border);
 }
@@ -77,12 +82,6 @@
   grid-column: 2/5;
 }
 
-.blog-preview {
-  background: var(--white-background);
-  border: 2px solid var(--white-background);
-  -webkit-backdrop-filter: blur(36px);
-  backdrop-filter: blur(36px);
-}
 .blog-preview img {
   min-height: 208px;
   -o-object-fit: cover;

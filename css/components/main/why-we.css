@@ -83,7 +83,6 @@
 @media (max-width: 768px) {
   .why-we__block:before {
     background: var(--arrow-border);
-    border-radius: 1rem !important;
   }
 }
 .why-we__block:hover .blur1 {
@@ -215,6 +214,7 @@
   z-index: 2;
   height: 300px;
   width: 200%;
+  pointer-events: none;
   background: radial-gradient(50% 50% at 50% 50%, rgba(190, 0, 104, 0.55) 0%, rgba(139, 10, 81, 0.5) 39.5%, rgba(71, 4, 41, 0.3) 70.99%, rgba(26, 1, 14, 0) 100%);
   border-radius: 50%;
   -webkit-transition: all 0.3s ease;
@@ -241,6 +241,7 @@
   z-index: 2;
   height: 400px;
   width: 200%;
+  pointer-events: none;
   background: radial-gradient(50% 50% at 50% 50%, rgba(190, 0, 104, 0.55) 0%, rgba(139, 10, 81, 0.5) 39.5%, rgba(71, 4, 41, 0.3) 70.99%, rgba(26, 1, 14, 0) 100%);
   border-radius: 50%;
   -webkit-transition: all 0.3s ease;

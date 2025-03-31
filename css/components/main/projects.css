@@ -26,7 +26,6 @@
 @media (max-width: 768px) {
   .projects__project:before {
     background: var(--arrow-border);
-    border-radius: 1rem !important;
   }
 }
 

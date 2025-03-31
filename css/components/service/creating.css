@@ -15,10 +15,6 @@
   }
 }
 .creating-wrapper__item {
-  background: var(--white-background);
-  border: 2px solid var(--white-background);
-  -webkit-backdrop-filter: blur(36px);
-  backdrop-filter: blur(36px);
   -ms-grid-column-span: 2;
   grid-column: span 2;
 }

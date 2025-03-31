@@ -7,11 +7,4 @@
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
-}
-
-.advertisment__item:first-child {
-  background: var(--white-background);
-  border: 2px solid var(--white-background);
-  -webkit-backdrop-filter: blur(36px);
-  backdrop-filter: blur(36px);
 }/*# sourceMappingURL=advertisment.css.map */

@@ -10,12 +10,6 @@
     flex-direction: column-reverse;
   }
 }
-.about-service__description {
-  background: var(--white-background);
-  border: 2px solid var(--white-background);
-  -webkit-backdrop-filter: blur(36px);
-  backdrop-filter: blur(36px);
-}
 @media (max-width: 768px) {
   .about-service__description > *:first-child {
     font-size: 1.3125rem !important;
