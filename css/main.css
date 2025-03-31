@@ -17326,6 +17326,10 @@ input[type=checkbox]:before {
     font-size: 1rem !important;
   }
 }
+.blog-sidebar__list a {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 .blog-sidebar__list a.active {
   background: var(--btn-border);
 }
