@@ -8,8 +8,8 @@
 
 .advertisment {
   &__item:first-child {
-    background: rgba(255, 255, 255, 0.04);
-    border: 2px solid rgba(255, 255, 255, 0.04);
+    background: var(--white-background);
+    border: 2px solid var(--white-background);
     backdrop-filter: blur(36px);
   }
 }

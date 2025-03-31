@@ -46,8 +46,8 @@
   }
 
   & > div {
-    background: rgba(255, 255, 255, 0.04);
-    border: 2px solid rgba(255, 255, 255, 0.04);
+    background: var(--white-background);
+    border: 2px solid var(--white-background);
     top: 9rem;
   }
 
@@ -77,7 +77,7 @@
         width: 12px;
         height: 12px;
         border-radius: 50%;
-        border: 3px solid #ffffff;
+        border: 3px solid var(--bs-white);
       }
     }
   }
@@ -118,7 +118,7 @@
   }
 
   &__grid-item {
-    background: #6e41f3;
+    background: var(--article-background);
     height: 208px;
   }
 }
@@ -155,7 +155,7 @@
 // table
 
 .table-responsive {
-  border: 2px solid rgba(255, 255, 255, 0.04);
+  border: 2px solid var(--white-background);
 
   td {
     font-size: 1rem;
@@ -165,7 +165,7 @@
     border-top: none;
 
     & th {
-      background: #12121c;
+      background: var(--table-background);
       vertical-align: middle;
       width: 25%;
       font-weight: 600;
@@ -206,7 +206,7 @@
 
   &:before {
     content: "";
-    background: #0b0b15;
+    background: var(--table-first-background);
     position: absolute;
     width: 100%;
     top: 0;
@@ -230,14 +230,14 @@
 }
 
 .blockquote {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: var(--white-background);
+  border: 1px solid var(--white-background);
 
   blockquote {
     font-size: 1rem;
     color: var(--bs-white);
-    background: rgba(70, 66, 243, 0.2);
-    border: 1px solid #4642f3;
+    background: var(--blockquote-background);
+    border: 1px solid var(--blockquote-border);
   }
 
   p {
@@ -247,15 +247,15 @@
 
 .gray-line {
   height: 1px;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--gray-line);
 }
 
 .footer-wrapper {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--gray-line);
 }
 
 .footer-calendar {
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--gray-line);
   width: 20px;
   height: 20px;
   min-width: 20px;
