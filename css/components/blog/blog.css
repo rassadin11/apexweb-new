@@ -50,7 +50,7 @@
 }
 
 .blog-sidebar__list a.active {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--btn-border);
 }
 
 .blog-wrapper {
@@ -78,8 +78,8 @@
 }
 
 .blog-preview {
-  background: rgba(255, 255, 255, 0.04);
-  border: 2px solid rgba(255, 255, 255, 0.04);
+  background: var(--white-background);
+  border: 2px solid var(--white-background);
   -webkit-backdrop-filter: blur(36px);
   backdrop-filter: blur(36px);
 }

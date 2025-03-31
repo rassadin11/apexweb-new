@@ -11,15 +11,15 @@
 .item-steps__number {
   min-width: 84px;
   height: 84px;
-  background: rgba(244, 36, 123, 0.2);
-  border: 3px solid rgba(244, 36, 123, 0.2);
+  background: var(--svg-background);
+  border: 3px solid var(--svg-background);
   color: var(--bs-pink);
 }
 @media (max-width: 768px) {
   .item-steps__number {
     min-width: 40px;
     height: 40px;
-    border: 2px solid rgba(244, 36, 123, 0.2);
+    border: 2px solid var(--svg-background);
   }
 }
 @media (max-width: 768px) {

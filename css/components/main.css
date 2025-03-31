@@ -12,6 +12,12 @@
     #e6007e 109.59%
   );
   --tg-color: #61cfff;
+  --gray-line: rgba(255, 255, 255, 0.5);
+  --table-background: #12121c;
+  --table-first-background: #0b0b15;
+  --article-background: #6e41f3;
+  --blockquote-background: rgba(70, 66, 243, 0.2);
+  --blockquote-border: #4642f3;
   --tg-border: rgba(118, 246, 255, 0.08);
   --btn-border: rgba(255, 255, 255, 0.1);
   --btn-box-shadow-s: rgba(237, 24, 113, 0.4);
