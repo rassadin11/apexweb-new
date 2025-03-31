@@ -17100,7 +17100,6 @@ input[type=checkbox]:before {
   .article-wrapper h2, .article-wrapper .h2,
   .blog h2,
   .blog .h2 {
-    scroll-margin-top: 5rem;
     font-size: 1.3125rem !important;
   }
 }
@@ -17111,11 +17110,6 @@ input[type=checkbox]:before {
 @media (max-width: 992px) {
   .block-anchor {
     scroll-margin-top: 6rem;
-  }
-}
-@media (max-width: 768px) {
-  .block-anchor {
-    scroll-margin-top: 5rem;
   }
 }
 
