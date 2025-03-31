@@ -4790,6 +4790,8 @@ function menuGenerator(elements, mainMenuField) {
 
 let m_history = [];
 const mainMenuField = document.querySelector('.header__nav ul');
+const mobileArrow = document.querySelector('.mobile-burger-arrow');
+mobileArrow.classList.add('disabled');
 function computeMobileMenu() {
   const mainLayouts = mainMenuField.querySelectorAll("[data-layout]");
   mainLayouts.forEach(item => {
@@ -4801,7 +4803,11 @@ function computeMobileMenu() {
       // создаём новый список
 
       let elements;
-      if (!m_history.length) {} else {
+      console.log(m_history);
+      if (!m_history.length) {
+        mobileArrow.classList.add('disabled');
+      } else {
+        mobileArrow.classList.remove('disabled');
         elements = mobileMenu[m_history.at(-1)];
       }
       menuGenerator(elements, mainMenuField);
@@ -4812,12 +4818,12 @@ function computeMobileMenu() {
 
 // делаем возврат в меню при нажатии на стрелочку
 
-const mobileArrow = document.querySelector('.mobile-burger-arrow');
 mobileArrow.addEventListener('click', () => {
   if (m_history.length) {
     m_history.pop();
     let elements;
     if (!m_history.length) {
+      mobileArrow.classList.add('disabled');
       elements = mobileMenu[0];
     } else {
       elements = mobileMenu[m_history.at(-1)];
@@ -4849,6 +4855,7 @@ cross.addEventListener('click', () => {
   document.body.classList.toggle('hidden');
   setTimeout(() => {
     h_wrapper.classList.toggle('active');
+    mobileArrow.classList.add('disabled');
     m_history = [];
     let elements = mobileMenu[0];
     mainMenuField.innerHTML = '';
