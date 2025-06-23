@@ -27,9 +27,6 @@
 
 .seo-wrapper {
   &__item {
-    background: var(--white-background);
-    border: 2px solid var(--white-background);
-    backdrop-filter: blur(36px);
     min-height: 245px;
 
     &:hover {

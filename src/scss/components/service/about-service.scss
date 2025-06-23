@@ -6,10 +6,6 @@
   }
 
   &__description {
-    background: var(--white-background);
-    border: 2px solid var(--white-background);
-    backdrop-filter: blur(36px);
-
     @media (max-width: 768px) {
       & > *:first-child {
         font-size: 1.3125rem !important;

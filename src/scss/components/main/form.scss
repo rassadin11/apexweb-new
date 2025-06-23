@@ -76,7 +76,7 @@ input[type="checkbox"] {
 }
 
 .main-form {
-  border: 2px solid rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--white-background);
 
   &:before {
     content: "";
@@ -90,7 +90,7 @@ input[type="checkbox"] {
   }
 
   &__button {
-    background: linear-gradient(90deg, #4642f3, #3431c6);
+    background: linear-gradient(90deg, var(--blockquote-border), #3431c6);
     background-size: 300% 300%;
     transition: box-shadow 0.3s ease;
     box-shadow: none;
@@ -120,12 +120,20 @@ input[type="checkbox"] {
 
   &__input {
     outline: none;
-    background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(70, 66, 243, 0.2);
+    background: var(--btn-border);
+    border: 2px solid var(--blockquote-background);
     color: var(--bs-white);
 
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+
     &:placeholder {
-      color: rgba(255, 255, 255, 0.24);
+      color: var(--border-gray);
+
+      @media (max-width: 768px) {
+        font-size: 1rem;
+      }
     }
   }
 

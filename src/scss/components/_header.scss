@@ -21,6 +21,7 @@
   width: 9px;
   height: 18px;
   cursor: pointer;
+  transition: opacity 0.3s ease;
 }
 
 .mobile-burger-cross {
@@ -87,6 +88,11 @@
     width: 21px;
     height: 16px;
     cursor: pointer;
+    display: none;
+
+    @media (max-width: 992px) {
+      display: block;
+    }
   }
 
   .arrow {
@@ -148,6 +154,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
+      height: calc(var(--vh, 1vh) * 100);
       opacity: 0;
       visibility: hidden;
       transform: translate(-100%, 0);
@@ -170,6 +177,14 @@
   }
 }
 
+.mobile-header-menu {
+  display: none;
+
+  @media (max-width: 992px) {
+    display: flex;
+  }
+}
+
 .contact-header {
   font-family: var(--font-unbounded);
   color: var(--gray-color);
@@ -185,7 +200,7 @@
   height: 24px;
 
   use {
-    stroke: var(--gray-color);
+    color: var(--gray-color);
   }
 }
 

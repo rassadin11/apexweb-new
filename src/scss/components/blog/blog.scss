@@ -46,6 +46,14 @@
 }
 
 .blog-sidebar__list {
+  @media (max-width: 768px) {
+    font-size: 1rem !important;
+  }
+
+  & a {
+    transition: all 0.3s ease;
+  }
+
   & a.active {
     background: var(--btn-border);
   }
@@ -68,10 +76,6 @@
 }
 
 .blog-preview {
-  background: var(--white-background);
-  border: 2px solid var(--white-background);
-  backdrop-filter: blur(36px);
-
   img {
     min-height: 208px;
     object-fit: cover;
@@ -99,6 +103,12 @@
       opacity: 0.7;
       top: 10%;
     }
+  }
+}
+
+.blog-description {
+  @media (max-width: 768px) {
+    font-size: 1rem;
   }
 }
 

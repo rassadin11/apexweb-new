@@ -6,15 +6,15 @@
         <img class="logo" src="./img/svg/apexweb-logo-white.svg" alt="Logo">
       </a>
     </div>
-    <svg class="header__burger d-block d-lg-none p-0">
+    <svg class="header__burger p-0">
       <use href="./img/svg/sprite.svg#burger"></use>
     </svg>
     <div class="header-wrap col-xxl-8 col-md-9 d-xxl-block d-flex justify-content-end">
-      <div class="mobile-header-menu d-lg-none d-flex align-items-center justify-content-between w-100 p-4">
+      <div class="mobile-header-menu align-items-center justify-content-between w-100 p-4">
         <svg class="mobile-burger-arrow">
           <use href="./img/svg/sprite.svg#burger-arrow"></use>
         </svg>
-        <p class="mobile-menu__title px-4">Меню</p>
+        <p class="mobile-menu__title px-4 text-center">Меню</p>
         <svg class="mobile-burger-cross">
           <use href="./img/svg/sprite.svg#menu_cross"></use>
         </svg>
@@ -22,12 +22,12 @@
       <nav class="header__nav navbar-nav">
         <ul class="d-flex align-items-center gap-xl-4 gap-2 p-lg-0 px-4">
           <li class="nav-item menu__dropdown">
-            <a href="#" class="nav-link p-0 p-lg-2" class="d-flex align-items-center gap-2" data-initial-layout="true"
+            <span class="nav-link p-0 p-lg-2" class="d-flex align-items-center gap-2" data-initial-layout="true"
               data-layout="1" data-position="header"><span>Услуги</span>
               <svg class="arrow">
                 <use href="./img/svg/sprite.svg#arrow"></use>
               </svg>
-            </a>
+            </span>
             <ul
               class="dropdown-menu overflow-hidden rounded-4 d-lg-block d-none header__dropdown pt-3 p-0 uslugi position-absolute mb-0 tab-list justify-content-between">
               <li class="header-tabs default-border">
@@ -397,11 +397,12 @@
               </li>
             </ul>
           </li>
-          <li class="nav-item menu__dropdown" data-layout="16" data-position="header" data-initial-layout="true">
-            <a href="#" class="nav-link p-0 p-lg-2" class="d-flex align-items-center gap-2"><span>О нас</span>
+          <li class="nav-item menu__dropdown">
+            <span class="nav-link p-0 p-lg-2" data-layout="16" data-position="header" data-initial-layout="true"
+              class="d-flex align-items-center gap-2"><span>О нас</span>
               <svg class="arrow">
                 <use href="./img/svg/sprite.svg#arrow"></use>
-              </svg></a>
+              </svg></span>
             <ul
               class="dropdown-menu rounded-4 d-lg-block d-none header__dropdown pt-3 p-0 uslugi position-absolute mb-0 tab-list justify-content-between">
               <li class="header-tabs default-border">

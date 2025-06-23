@@ -6,10 +6,12 @@
   }
 }
 
-.advertisment {
-  &__item:first-child {
-    background: var(--white-background);
-    border: 2px solid var(--white-background);
-    backdrop-filter: blur(36px);
+.item-advertisment__text {
+  font-size: 1rem !important;
+}
+
+.advertisment__item > p {
+  @media (max-width: 768px) {
+    font-size: 1rem;
   }
 }

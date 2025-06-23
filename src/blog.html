@@ -8,14 +8,15 @@
         @include('partials/header.html')
         <main class="main container mb-10">
             <h1 class="text-center mb-7 mt-8">Блог APEXWEB</h1>
-            <p class="text-center mb-8">Написали интересные статьи и помогли разобраться с со сложными темами <br />
+            <p class="text-center mb-8 blog-description">Написали интересные статьи и помогли разобраться с со сложными
+                темами <br />
                 интернет маркетинга и цифровой грамотности не одному пользователю!</p>
             <div class=" d-lg-grid d-flex flex-column blog-wrapper gap-4 mt-lg-9 mt-8">
                 <aside class="article-sidebar blog">
-                    <div class="position-sticky p-5 rounded-4">
-                        <h3 class="article-sidebar__title fs-3 mb-4">Разделы</h3>
+                    <div class="position-sticky p-md-5 p-3 rounded-4">
+                        <h3 class="article-sidebar__title fs-3 mb-md-4 mb-3">Разделы</h3>
 
-                        <ul class="blog-sidebar__list d-flex flex-column gap-3 p-0">
+                        <ul class="blog-sidebar__list table_of_context d-flex flex-column gap-3 p-0">
                             <li class="d-flex align-items-center gap-3"><a href="#first"
                                     class="active rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"><svg
                                         class="fire">
@@ -47,7 +48,7 @@
                     </div>
                 </aside>
                 <section class="article-main blog w-100">
-                    <div class="blog-preview p-5 rounded-4 position-relative overflow-hidden">
+                    <div class="blog-preview default-background p-md-5 p-3 rounded-4 position-relative overflow-hidden">
                         <img src="./img/article-banner.jpg" alt="article banner" class="rounded-4 w-100">
                         <div class="blog-preview__text mt-7">
                             <p class="mt-4">Опыт специалистов команды APEXWEB выходит за пределы решения задач бизнеса
@@ -63,8 +64,8 @@
                         </div>
                     </div>
 
-                    <div class="most-famous position-relative mt-lg-9 mt-7">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3" id="first"><svg class="big-fire">
+                    <div class="block-anchor most-famous position-relative mt-lg-9 mt-7" id="first">
+                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-fire">
                                 <use xlink:href="./img/svg/sprite.svg#fire"></use>
                             </svg> Самые популярные статьи за месяц</h2>
 
@@ -150,8 +151,8 @@
                         </div>
                     </div>
 
-                    <div class="marketing position-relative mt-lg-9 mt-7">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3" id="second"><svg class="big-aim">
+                    <div class="block-anchor marketing position-relative mt-lg-9 mt-7" id="second">
+                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-aim">
                                 <use xlink:href="./img/svg/sprite.svg#aim"></use>
                             </svg> Маркетинг</h2>
 
@@ -272,8 +273,8 @@
                         </div>
                     </div>
 
-                    <div class="technologies position-relative mt-lg-9 mt-7">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3" id="third"><svg class="big-strange">
+                    <div class="block-anchor technologies position-relative mt-lg-9 mt-7" id="third">
+                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-strange">
                                 <use xlink:href="./img/svg/sprite.svg#strange"></use>
                             </svg> Технологии</h2>
 
@@ -409,8 +410,8 @@
                         </div>
                     </div>
 
-                    <div class="most-famous position-relative mt-lg-9 mt-7">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3" id="fourth"><svg class="big-brush">
+                    <div class="block-anchor most-famous position-relative mt-lg-9 mt-7" id="fourth">
+                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-brush">
                                 <use xlink:href="./img/svg/sprite.svg#brush"></use>
                             </svg> Дизайн</h2>
 

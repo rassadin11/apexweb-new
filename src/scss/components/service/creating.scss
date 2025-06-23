@@ -10,9 +10,6 @@
   }
 
   &__item {
-    background: var(--white-background);
-    border: 2px solid var(--white-background);
-    backdrop-filter: blur(36px);
     grid-column: span 2;
 
     img {

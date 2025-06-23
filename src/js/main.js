@@ -105,7 +105,6 @@ window.onresize = () => {
 // mobile menu generator
 
 const mobileTitle = document.querySelector('.mobile-menu__title')
-const mobileBack = document.querySelector('.mobile-burger-arrow')
 const attrLayouts = document.querySelectorAll("[data-layout]")
 const initialMenu = document.querySelectorAll('[data-initial-layout]')
 const mobileMenu = {}
@@ -171,7 +170,7 @@ function menuGenerator(elements, mainMenuField) {
         if (elements[i].length === 2) {
             mainMenuField.insertAdjacentHTML(`beforeend`, `
                 <li class="nav-item d-flex align-items-center gap-2" data-layout="${elements[i][1]}">
-                    <a href="#" class="nav-link p-0 p-lg-2">${elements[i][0]}</a>
+                    <span class="nav-link p-0 p-lg-2">${elements[i][0]}</span>
                     <svg class="arrow">
                         <use href="./img/svg/sprite.svg#arrow"></use>
                     </svg>
@@ -191,6 +190,8 @@ function menuGenerator(elements, mainMenuField) {
 
 let m_history = [];
 const mainMenuField = document.querySelector('.header__nav ul')
+const mobileArrow = document.querySelector('.mobile-burger-arrow')
+mobileArrow.classList.add('disabled')
 
 function computeMobileMenu() {
     const mainLayouts = mainMenuField.querySelectorAll("[data-layout]")
@@ -206,8 +207,9 @@ function computeMobileMenu() {
             let elements;
 
             if (!m_history.length) {
-
+                mobileArrow.classList.add('disabled')
             } else {
+                mobileArrow.classList.remove('disabled')
                 elements = mobileMenu[m_history.at(-1)];
             }
 
@@ -219,8 +221,6 @@ function computeMobileMenu() {
 
 // делаем возврат в меню при нажатии на стрелочку
 
-const mobileArrow = document.querySelector('.mobile-burger-arrow')
-
 mobileArrow.addEventListener('click', () => {
     if (m_history.length) {
         m_history.pop();
@@ -228,6 +228,7 @@ mobileArrow.addEventListener('click', () => {
         let elements;
 
         if (!m_history.length) {
+            mobileArrow.classList.add('disabled')
             elements = mobileMenu[0]
         } else {
             elements = mobileMenu[m_history.at(-1)];
@@ -264,6 +265,7 @@ cross.addEventListener('click', () => {
 
     setTimeout(() => {
         h_wrapper.classList.toggle('active');
+        mobileArrow.classList.add('disabled')
         m_history = []
 
         let elements = mobileMenu[0]
@@ -320,3 +322,47 @@ elements2.forEach(element2 => {
     let mask2 = new IMask(element2, maskOptions2);
     emailMasks.push(mask2);
 })
+
+
+// Получаем все якорные ссылки из блока навигации
+const navLinks = document.querySelectorAll('.table_of_context a[href^="#"]');
+
+console.log(navLinks)
+
+// Получаем все секции, на которые ссылаются якоря
+const sections = Array.from(navLinks).map(link => {
+    const id = link.getAttribute('href').substring(1);
+    return document.getElementById(id);
+}).filter(Boolean);
+
+function activateCurrentLink() {
+    const scrollPosition = window.scrollY + 150; // +100 для небольшого запаса
+
+    sections.forEach((target, idx) => {
+        const { top } = target.getBoundingClientRect();
+        const targetTop = top + window.scrollY;
+        const targetHeight = target.offsetHeight;
+
+        // Проверяем, виден ли элемент
+        if (scrollPosition >= targetTop && scrollPosition < targetTop + targetHeight) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            navLinks[idx].classList.add('active');
+        }
+    });
+}
+
+// Вызываем функцию при загрузке и при прокрутке
+window.addEventListener('load', activateCurrentLink);
+activateCurrentLink();
+window.addEventListener('scroll', activateCurrentLink);
+
+// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+let vh = window.innerHeight * 0.01;
+// Then we set the value in the --vh custom property to the root of the document
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+window.addEventListener('resize', () => {
+    // We execute the same script as before
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+});
