@@ -8,7 +8,7 @@
         <div class="main-blur1"></div>
 
         <div class="circles position-absolute">
-          <div class="circle-1-wrapper position-relative overflow-hidden">
+          <div class="circle-1-wrapper position-relative">
             <div class="circle-1">
               <div class="purple-circle"></div>
               <div class="white-circle-1"></div>
@@ -126,6 +126,63 @@
       pathComputer(trajectory2_4, circleW_2, trajectory2_4_divider, circle2_4);
       pathComputer(trajectory1_5, circleW_1, trajectory1_5_divider, circle1_5);
       pathComputer(trajectory2_5, circleW_2, trajectory2_5_divider, circle2_5);
+
+      // animation circles rotation
+      const circle = document.querySelector(".circles");
+      const circle1 = document.querySelector(".circle-1");
+      const circle2 = document.querySelector(".circle-2");
+
+      const windowWidth = document.querySelector("body").clientWidth;
+
+      // Центр движения
+      const centerX = -100;
+      const centerY = 0;
+      const radius = 100;
+
+      const duration = 35.5 * 1000; // 35.5 секунд
+      const halfDuration = duration / 2;
+
+      const offsetX = 0;
+      const offsetY = 0;
+
+      let start = null;
+
+      function animate(timestamp) {
+        if (!start) start = timestamp;
+        const elapsed = (timestamp - start) % duration;
+
+        let angle;
+        if (elapsed <= halfDuration) {
+          angle = (elapsed / halfDuration) * (Math.PI / 2);
+        } else {
+          angle = (1 - (elapsed - halfDuration) / halfDuration) * (Math.PI / 2);
+        }
+
+        const sin = Math.sin(angle);
+        const cos = Math.cos(angle);
+
+        const x1 = centerX + radius * cos;
+        const y1 = centerY + radius * sin;
+
+        const x2 = x1 + offsetX;
+        const y2 = y1 + offsetY;
+
+        circle1.style.left = `${x1}px`;
+        circle1.style.top = `${y1}px`;
+
+        circle2.style.left = `${(windowWidth / 100) * 65.9 + x2}px`;
+        circle2.style.top = `${windowWidth / 10 + y2}px`;
+
+        const x = centerX + radius * cos;
+        const y = centerY + radius * sin;
+
+        circle.style.left = `${x}px`;
+        circle.style.top = `${y}px`;
+
+        requestAnimationFrame(animate);
+      }
+
+      requestAnimationFrame(animate);
 
       // animation 25s
 

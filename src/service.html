@@ -1,36 +1,63 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
+  @include('partials/head.html')
 
-@include('partials/head.html')
-
-<body>
+  <body>
     <div>
-        @include('partials/header.html')
-        <main class="main container mb-10">
-            @include('partials/service/main_section.html')
-            @include('partials/service/description.html')
-            @include('partials/service/why-we.html')
-            @include('partials/service/projects.html')
-            @include('partials/service/why-apexweb.html')
-            @include('partials/service/creating.html')
-            @include('partials/service/steps.html')
-            @include('partials/form.html')
-            @include('partials/service/faq.html')
-        </main>
+      @include('partials/header.html')
+      <main class="main container mb-10">
+        @include('partials/service/main_section.html')
+        @include('partials/service/description.html')
+        @include('partials/service/why-we.html')
+        @include('partials/service/projects.html')
+        @include('partials/service/why-apexweb.html')
+        @include('partials/service/creating.html')
+        @include('partials/service/steps.html') @include('partials/form.html')
+        @include('partials/service/faq.html')
+      </main>
 
-        @include('partials/footer.html')
-        <div class="main-section__background">
-            <div class="background-wrap"></div>
+      @include('partials/footer.html')
 
-            <div class="main-blur1"></div>
-            <div class="main-blur2"></div>
+      <div class="main-section__background">
+        <div class="main-blur1"></div>
 
-            <div class="circle-1"></div>
-            <div class="circle-2"></div>
+        <div class="circles position-absolute">
+          <div class="circle-1-wrapper position-relative">
+            <div class="circle-1">
+              <div class="purple-circle"></div>
+              <div class="white-circle-1 circle"></div>
+              <div class="white-circle-small circle"></div>
+              <div class="white-circle-2 circle"></div>
+              <div class="middle-circle-1 circle"></div>
+              <div class="middle-circle-2 circle"></div>
+              <!-- <svg class="position-absolute w-100 h-100">
+                <path
+                  d="M 1800 800 C 900 820 200 550 -400 250"
+                  stroke="#fff"
+                  fill="#fff"
+                />
+              </svg> -->
+            </div>
+          </div>
+          <div class="circle-2">
+            <div class="purple-circle"></div>
+            <div class="white-circle-1 circle"></div>
+            <div class="white-circle-small circle"></div>
+            <div class="white-circle-2 circle"></div>
+            <div class="middle-circle-1 circle"></div>
+            <div class="middle-circle-2 circle"></div>
+            <!-- <svg class="position-absolute w-100 h-100">
+              <path
+                d="M -200 150 C 300 420 300 550 600 2500"
+                stroke="#fff"
+                fill="#fff"
+              />
+            </svg> -->
+          </div>
         </div>
+      </div>
 
-        <!-- @include('html/h1.html') пример include -->
+      <!-- @include('html/h1.html') пример include -->
     </div>
-</body>
-
+  </body>
 </html>
