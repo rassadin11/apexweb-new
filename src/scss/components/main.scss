@@ -125,6 +125,31 @@ h2.fs-2 {
 
 // circles
 
+.circles {
+  // transform: rotate(1deg);
+  // mix-blend-mode: color-dodge;
+  // transform-origin: 65% 30%;
+  // animation: circles_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes circles_move {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .circle-1-wrapper {
   position: absolute;
   top: -49vw;
@@ -146,10 +171,21 @@ h2.fs-2 {
     #d20043 100%
   );
   transform: rotate(180deg);
+  mix-blend-mode: color-dodge;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  mix-blend-mode: color-dodge;
+
+  &::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    position: absolute;
+    top: 80%;
+    right: 5%;
+    background: red;
+  }
 
   @media (max-width: 992px) {
     top: -8%;
@@ -183,23 +219,177 @@ h2.fs-2 {
   background: radial-gradient(
     50% 50% at 50% 50%,
     rgba(255, 255, 255, 0.54) 0%,
+    rgba(255, 255, 255, 0.42) 7.77%,
+    rgba(255, 255, 255, 0.35) 12.08%,
+    rgba(255, 255, 255, 0.28) 23.75%,
+    rgba(255, 255, 255, 0.21) 33.27%,
+    rgba(255, 255, 255, 0.16) 47.63%,
+    rgba(255, 255, 255, 0.11) 55%,
+    rgba(255, 255, 255, 0.09) 66.31%,
+    rgba(255, 255, 255, 0.05) 73.49%,
+    rgba(255, 255, 255, 0.03) 85.88%,
+    rgba(255, 255, 255, 0.01) 90.91%,
     rgba(255, 255, 255, 0) 100%
   );
 
-  offset-path: path(
-    "M -31.081 463.305 C 39.247 433.305 42.515 429.34 49.493 429.724 C 68.276 420.68 87.967 430.733 107.978 430.063 C 430.601 400.855 570.29 304.982 675.186 230.35 C 650.673 230.511 812.649 125.342 812.006 108.789 C 865.445 51.551 900.996 5.172 900.996 -61.999"
+  offset-path: path("M 1500 400 C 900 470 400 450 -300 220");
+  offset-rotate: auto;
+  animation: circle1 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@keyframes circle1 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  45% {
+    offset-distance: 55%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.white-circle-2 {
+  width: 65%;
+  height: 65%;
+  position: absolute;
+  top: 0;
+
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.54) 0%,
+    rgba(255, 255, 255, 0.46) 2.67%,
+    rgba(255, 255, 255, 0.39) 7.19%,
+    rgba(255, 255, 255, 0.3) 14.13%,
+    rgba(255, 255, 255, 0.24) 18.21%,
+    rgba(255, 255, 255, 0.19) 24.7%,
+    rgba(255, 255, 255, 0.15) 31.68%,
+    rgba(255, 255, 255, 0.12) 37.41%,
+    rgba(255, 255, 255, 0.1) 41.99%,
+    rgba(255, 255, 255, 0.09) 48.86%,
+    rgba(255, 255, 255, 0.06) 59.16%,
+    rgba(255, 255, 255, 0.04) 66.03%,
+    rgba(255, 255, 255, 0.03) 76.46%,
+    rgba(255, 255, 255, 0.01) 90.61%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  offset-path: path("M 1500 400 C 900 470 400 450 -300 220");
+  offset-rotate: auto;
+  animation: circle2 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@keyframes circle2 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  40% {
+    offset-distance: 40%;
+  }
+
+  75% {
+    offset-distance: 80%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+.white-circle-small {
+  width: 25%;
+  height: 25%;
+
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.55) 0%,
+    rgba(255, 255, 255, 0) 100%
   );
 
   offset-rotate: auto;
-  animation: move 9s linear infinite;
+  animation: small_circle1 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
 }
 
-@keyframes move {
+@keyframes small_circle1 {
   0% {
+    offset-distance: 0%;
+  }
+
+  45% {
+    offset-distance: 55%;
+  }
+
+  100% {
     offset-distance: 100%;
   }
-  100% {
+}
+
+.middle-circle-1 {
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 0;
+
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.54) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  offset-rotate: auto;
+  animation: middle_circle1 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@keyframes middle_circle1 {
+  0% {
     offset-distance: 0%;
+    width: 35%;
+    height: 35%;
+  }
+
+  25% {
+    offset-distance: 30%;
+    width: 35%;
+    height: 35%;
+  }
+
+  100% {
+    offset-distance: 100%;
+    width: 40%;
+    height: 40%;
+  }
+}
+
+.middle-circle-2 {
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  top: 0;
+
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0.54) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+
+  offset-rotate: auto;
+  animation: middle_circle3 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@keyframes middle_circle3 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  25% {
+    offset-distance: 30%;
+  }
+
+  100% {
+    offset-distance: 100%;
   }
 }
 
@@ -242,19 +432,120 @@ h2.fs-2 {
       rgba(255, 255, 255, 0) 100%
     );
   }
+
+  .white-circle-1 {
+    animation: circle2_1 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+    animation-delay: 5.6s;
+  }
+
+  .white-circle-2 {
+    animation: circle2_2 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+    animation-delay: 6.7s;
+  }
+
+  .white-circle-small {
+    animation: small_circle2 10s linear paused;
+    position: absolute;
+    top: 0;
+  }
+
+  .middle-circle-1 {
+    animation: middle_circle2 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+    animation-delay: 4.3s;
+  }
+
+  .middle-circle-2 {
+    width: 35%;
+    height: 35%;
+    animation: middle_circle4 7s linear paused;
+    animation-delay: 4.8s;
+  }
+}
+
+@keyframes circle2_1 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  50% {
+    offset-distance: 55%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes circle2_2 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  15% {
+    offset-distance: 15%;
+  }
+
+  20% {
+    offset-distance: 15%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes small_circle2 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  100% {
+    offset-distance: 70%;
+  }
+}
+
+@keyframes middle_circle2 {
+  0% {
+    offset-distance: 0%;
+    width: 40%;
+    height: 40%;
+  }
+
+  30% {
+    offset-distance: 30%;
+    width: 42%;
+    height: 42%;
+  }
+
+  100% {
+    offset-distance: 100%;
+    width: 45%;
+    height: 45%;
+  }
+}
+
+@keyframes middle_circle4 {
+  0% {
+    offset-distance: 0%;
+  }
+
+  100% {
+    offset-distance: 100%;
+  }
 }
 
 .main-blur1 {
   position: absolute;
-  top: -32vw;
+  top: -28vw;
   left: -34.5vw;
   -webkit-transform: rotate(20deg);
   -ms-transform: rotate(20deg);
-  transform: rotate(20deg);
-  width: 135vw;
+  transform: rotate(23deg);
+  width: 137vw;
   height: 56vw;
   z-index: -1;
   opacity: 0.3;
+  -webkit-filter: blur(100px);
   filter: blur(100px);
   background: radial-gradient(
     50% 50% at 50% 50%,

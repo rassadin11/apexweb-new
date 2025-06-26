@@ -5,29 +5,265 @@
   <body>
     <div>
       <div class="main-section__background">
-        <div class="background-wrap"></div>
-
         <div class="main-blur1"></div>
-        <div class="main-blur2"></div>
 
-        <div class="circle-1-wrapper position-relative overflow-hidden">
-          <div class="circle-1">
+        <div class="circles position-absolute">
+          <div class="circle-1-wrapper position-relative overflow-hidden">
+            <div class="circle-1">
+              <div class="purple-circle"></div>
+              <div class="white-circle-1"></div>
+              <div class="white-circle-small"></div>
+              <div class="white-circle-2"></div>
+              <div class="middle-circle-1"></div>
+              <div class="middle-circle-2"></div>
+              <!-- <svg class="position-absolute w-100 h-100">
+                <path
+                  d="M 1800 800 C 900 820 200 550 -400 250"
+                  stroke="#fff"
+                  fill="#fff"
+                />
+              </svg> -->
+            </div>
+          </div>
+          <div class="circle-2">
             <div class="purple-circle"></div>
             <div class="white-circle-1"></div>
+            <div class="white-circle-small"></div>
+            <div class="white-circle-2"></div>
+            <div class="middle-circle-1"></div>
+            <div class="middle-circle-2"></div>
             <!-- <svg class="position-absolute w-100 h-100">
               <path
-                d="M -31.081 463.305 C 39.247 433.305 42.515 429.34 49.493 429.724 C 68.276 420.68 87.967 430.733 107.978 430.063 C 430.601 400.855 570.29 304.982 675.186 230.35 C 650.673 230.511 812.649 125.342 812.006 108.789 C 865.445 51.551 900.996 5.172 900.996 -61.999"
+                d="M -200 150 C 300 420 300 550 600 2500"
                 stroke="#fff"
-              ></path>
+                fill="#fff"
+              />
             </svg> -->
           </div>
-        </div>
-        <div class="circle-2">
-          <div class="purple-circle"></div>
         </div>
       </div>
 
       <!-- @include('html/h1.html') пример include -->
     </div>
+
+    <script>
+      function pathComputer(initialPath, target, divider, element) {
+        let array = initialPath.split(" ");
+
+        array.forEach((item, idx) => {
+          if (!isNaN(item)) {
+            array[idx] = (+item / divider) * target;
+          }
+        });
+
+        array = array.join(" ");
+        element.style.offsetPath = `path("${array}")`;
+      }
+
+      // два больших круга
+      const trajectory1_1 = "M 1500 650 C 900 620 400 550 -400 240";
+      const trajectory1_1_divider = 1734;
+
+      const trajectory2_1 = "M -300 0 C 500 620 400 550 300 1400";
+      const trajectory2_1_divider = 1326;
+
+      const circle1_1 = document.querySelector(".circle-1 .white-circle-1");
+      const circle2_1 = document.querySelector(".circle-2 .white-circle-1");
+
+      // два маленьких круга
+
+      const trajectory1_2 = "M 1600 -100 C 900 270 400 100 200 -100";
+      const trajectory1_2_divider = 1916;
+      const circle1_2 = document.querySelector(".circle-1 .white-circle-small");
+
+      const trajectory2_2 = "M -200 900 C 400 1000 300 1150 -100 2500";
+      const trajectory2_2_divider = 1326;
+      const circle2_2 = document.querySelector(".circle-2 .white-circle-small");
+
+      // два самых больших круга
+
+      const trajectory1_3 = "M 1800 800 C 900 820 200 550 -400 250";
+      const trajectory1_3_divider = 1916;
+      const circle1_3 = document.querySelector(".circle-1 .white-circle-2");
+
+      const trajectory2_3 = "M -200 150 C 300 420 300 550 600 2500";
+      const trajectory2_3_divider = 1326;
+      const circle2_3 = document.querySelector(".circle-2 .white-circle-2");
+
+      // четыре круга разного размера, двигающихся по одной траектории
+
+      const trajectory1_4 = "M 1800 600 C 900 620 400 650 -200 100";
+      const trajectory1_4_divider = 1916;
+      const circle1_4 = document.querySelector(".circle-1 .middle-circle-1");
+
+      const trajectory2_4 = "M -250 400 C 300 520 300 550 400 1500";
+      const trajectory2_4_divider = 1326;
+      const circle2_4 = document.querySelector(".circle-2 .middle-circle-1");
+
+      const trajectory1_5 = "M 1600 500 C 900 620 400 650 -200 100";
+      const trajectory1_5_divider = 1916;
+      const circle1_5 = document.querySelector(".circle-1 .middle-circle-2");
+
+      const trajectory2_5 = "M -250 400 C 300 520 300 550 400 1500";
+      const trajectory2_5_divider = 1326;
+      const circle2_5 = document.querySelector(".circle-2 .middle-circle-2");
+
+      const circleW_1 = document
+        .querySelector(".circle-1")
+        .getBoundingClientRect().width;
+
+      const circleW_2 = document
+        .querySelector(".circle-2")
+        .getBoundingClientRect().width;
+
+      pathComputer(trajectory1_1, circleW_1, trajectory1_1_divider, circle1_1);
+      pathComputer(trajectory2_1, circleW_2, trajectory2_1_divider, circle2_1);
+      pathComputer(trajectory1_2, circleW_1, trajectory1_2_divider, circle1_2);
+      pathComputer(trajectory2_2, circleW_2, trajectory2_2_divider, circle2_2);
+      pathComputer(trajectory1_3, circleW_1, trajectory1_3_divider, circle1_3);
+      pathComputer(trajectory2_3, circleW_2, trajectory2_3_divider, circle2_3);
+      pathComputer(trajectory1_4, circleW_1, trajectory1_4_divider, circle1_4);
+      pathComputer(trajectory2_4, circleW_2, trajectory2_4_divider, circle2_4);
+      pathComputer(trajectory1_5, circleW_1, trajectory1_5_divider, circle1_5);
+      pathComputer(trajectory2_5, circleW_2, trajectory2_5_divider, circle2_5);
+
+      // animation 25s
+
+      function startFirstCircles() {
+        circle1_1.style.animation = "circle1 13s cubic-bezier(0.4, 0, 0.2, 1)";
+
+        // обычный большой круг
+
+        setTimeout(() => {
+          circle1_1.style.animation = "none";
+          void circle1_1.offsetWidth;
+        }, 13000);
+
+        setTimeout(() => {
+          circle2_1.style.animation =
+            "circle2_1 13s cubic-bezier(0.4, 0, 0.2, 1)";
+
+          setTimeout(() => {
+            circle2_1.style.animation = "none";
+            void circle2_1.offsetWidth;
+          }, 13000);
+        }, 5800);
+
+        setTimeout(() => {
+          startFirstCircles();
+        }, 35500);
+      }
+
+      function startSecondCircles() {
+        circle1_5.style.animation =
+          "middle_circle3 10s cubic-bezier(0.4, 0, 0.2, 1)";
+
+        setTimeout(() => {
+          circle1_5.style.animation = "none";
+          void circle1_5.offsetWidth;
+        }, 10000);
+
+        setTimeout(() => {
+          circle2_5.style.animation =
+            "middle_circle4 8s cubic-bezier(0.4, 0, 0.2, 1)";
+          setTimeout(() => {
+            circle2_5.style.animation = "none";
+            void circle2_5.offsetWidth;
+          }, 8000);
+        }, 4400);
+
+        setTimeout(() => {
+          startSecondCircles();
+        }, 35500);
+      }
+
+      function startThirdCircles() {
+        circle1_3.style.animation = "circle2 13s cubic-bezier(0.4, 0, 0.2, 1)";
+
+        setTimeout(() => {
+          circle1_3.style.animation = "none";
+          void circle1_3.offsetWidth;
+        }, 13000);
+
+        setTimeout(() => {
+          circle2_3.style.animation =
+            "circle2_2 13s cubic-bezier(0.4, 0, 0.2, 1)";
+
+          setTimeout(() => {
+            circle2_3.style.animation = "none";
+            void circle2_3.offsetWidth;
+          }, 13000);
+        }, 6700);
+
+        setTimeout(() => {
+          startThirdCircles();
+        }, 35500);
+      }
+
+      function startFourthCircles() {
+        circle1_2.style.animation =
+          "small_circle1 10s cubic-bezier(0.4, 0, 0.2, 1)";
+
+        setTimeout(() => {
+          circle1_2.style.animation = "none";
+          void circle1_2.offsetWidth;
+        }, 10000);
+
+        setTimeout(() => {
+          circle2_2.style.animation = "small_circle2 10s linear";
+
+          setTimeout(() => {
+            circle2_2.style.animation = "none";
+            void circle2_2.offsetWidth;
+          }, 10000);
+        }, 5000);
+
+        setTimeout(() => {
+          startThirdCircles();
+        }, 35500);
+      }
+
+      function startFifthCircles() {
+        circle1_4.style.animation =
+          "middle_circle1 10s cubic-bezier(0.4, 0, 0.2, 1)";
+
+        setTimeout(() => {
+          circle1_4.style.animation = "none";
+          void circle1_4.offsetWidth;
+        }, 10000);
+
+        setTimeout(() => {
+          circle2_4.style.animation =
+            "middle_circle2 10s cubic-bezier(0.4, 0, 0.2, 1)";
+
+          setTimeout(() => {
+            circle2_4.style.animation = "none";
+            void circle2_4.offsetWidth;
+          }, 10000);
+        }, 4700);
+
+        setTimeout(() => {
+          startFifthCircles();
+        }, 35500);
+      }
+
+      startFirstCircles();
+
+      setTimeout(() => {
+        startSecondCircles();
+      }, 13000);
+
+      setTimeout(() => {
+        startThirdCircles();
+      }, 18000);
+
+      setTimeout(() => {
+        startFourthCircles();
+      }, 20000);
+
+      setTimeout(() => {
+        startFifthCircles();
+      }, 28000);
+    </script>
   </body>
 </html>
