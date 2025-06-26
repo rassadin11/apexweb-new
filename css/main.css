@@ -3465,7 +3465,7 @@ textarea.form-control-lg {
 .form-floating > .form-control-plaintext::placeholder {
   color: transparent;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown), .form-floating > .form-control-plaintext:not(:-moz-placeholder-shown) {
+.form-floating > .form-control:not(:-moz-placeholder), .form-floating > .form-control-plaintext:not(:-moz-placeholder) {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
@@ -3488,7 +3488,7 @@ textarea.form-control-lg {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label {
+.form-floating > .form-control:not(:-moz-placeholder) ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -15228,7 +15228,6 @@ h2.fs-2, .fs-2.h2 {
 .default-background {
   background: var(--white-background);
   border: 2px solid var(--white-background);
-  -webkit-backdrop-filter: blur(36px);
   backdrop-filter: blur(36px);
 }
 
@@ -15236,35 +15235,76 @@ h2.fs-2, .fs-2.h2 {
   list-style-type: disc;
 }
 
-.circle-1 {
+@-webkit-keyframes circles_move {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  75% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes circles_move {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  25% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+  75% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+.circle-1-wrapper {
   position: absolute;
   top: -49vw;
   right: 27.25vw;
   width: 100vw;
-  min-height: 100vw;
+  height: 100vw;
+}
+
+.circle-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background: radial-gradient(90% 90% at -6% 29%, rgba(210, 0, 140, 0) 0%, rgba(210, 0, 140, 0.3) 35%, #d20043 100%);
+  background: radial-gradient(90% 90% at -6% 29%, rgba(210, 0, 140, 0) 0%, #d20043 100%);
   -webkit-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+  mix-blend-mode: color-dodge;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
-  mix-blend-mode: color-dodge;
-  opacity: 0.5;
 }
-.circle-1:before {
+.circle-1::after {
   content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
   position: absolute;
-  z-index: 0;
-  top: 6%;
-  left: -20%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.7) 15%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0) 66%);
-  width: 55%;
-  height: 55%;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
+  top: 80%;
+  right: 5%;
+  background: red;
 }
 @media (max-width: 992px) {
   .circle-1 {
@@ -15274,7 +15314,205 @@ h2.fs-2, .fs-2.h2 {
     min-height: 100vh;
   }
 }
+.circle-1 .purple-circle {
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  opacity: 0.4;
+  z-index: 3;
+  top: -13%;
+  left: -24%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0) 100%);
+}
 
+.white-circle-1 {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.42) 7.77%, rgba(255, 255, 255, 0.35) 12.08%, rgba(255, 255, 255, 0.28) 23.75%, rgba(255, 255, 255, 0.21) 33.27%, rgba(255, 255, 255, 0.16) 47.63%, rgba(255, 255, 255, 0.11) 55%, rgba(255, 255, 255, 0.09) 66.31%, rgba(255, 255, 255, 0.05) 73.49%, rgba(255, 255, 255, 0.03) 85.88%, rgba(255, 255, 255, 0.01) 90.91%, rgba(255, 255, 255, 0) 100%);
+  offset-path: path("M 1500 400 C 900 470 400 450 -300 220");
+  offset-rotate: auto;
+  -webkit-animation: circle1 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: circle1 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@-webkit-keyframes circle1 {
+  0% {
+    offset-distance: 0%;
+  }
+  45% {
+    offset-distance: 55%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes circle1 {
+  0% {
+    offset-distance: 0%;
+  }
+  45% {
+    offset-distance: 55%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+.white-circle-2 {
+  width: 65%;
+  height: 65%;
+  position: absolute;
+  top: 0;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.46) 2.67%, rgba(255, 255, 255, 0.39) 7.19%, rgba(255, 255, 255, 0.3) 14.13%, rgba(255, 255, 255, 0.24) 18.21%, rgba(255, 255, 255, 0.19) 24.7%, rgba(255, 255, 255, 0.15) 31.68%, rgba(255, 255, 255, 0.12) 37.41%, rgba(255, 255, 255, 0.1) 41.99%, rgba(255, 255, 255, 0.09) 48.86%, rgba(255, 255, 255, 0.06) 59.16%, rgba(255, 255, 255, 0.04) 66.03%, rgba(255, 255, 255, 0.03) 76.46%, rgba(255, 255, 255, 0.01) 90.61%, rgba(255, 255, 255, 0) 100%);
+  offset-path: path("M 1500 400 C 900 470 400 450 -300 220");
+  offset-rotate: auto;
+  -webkit-animation: circle2 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: circle2 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@-webkit-keyframes circle2 {
+  0% {
+    offset-distance: 0%;
+  }
+  40% {
+    offset-distance: 40%;
+  }
+  75% {
+    offset-distance: 80%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes circle2 {
+  0% {
+    offset-distance: 0%;
+  }
+  40% {
+    offset-distance: 40%;
+  }
+  75% {
+    offset-distance: 80%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+.white-circle-small {
+  width: 25%;
+  height: 25%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 100%);
+  offset-rotate: auto;
+  -webkit-animation: small_circle1 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: small_circle1 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@-webkit-keyframes small_circle1 {
+  0% {
+    offset-distance: 0%;
+  }
+  45% {
+    offset-distance: 55%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes small_circle1 {
+  0% {
+    offset-distance: 0%;
+  }
+  45% {
+    offset-distance: 55%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+.middle-circle-1 {
+  width: 35%;
+  height: 35%;
+  position: absolute;
+  top: 0;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0) 100%);
+  offset-rotate: auto;
+  -webkit-animation: middle_circle1 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: middle_circle1 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@-webkit-keyframes middle_circle1 {
+  0% {
+    offset-distance: 0%;
+    width: 35%;
+    height: 35%;
+  }
+  25% {
+    offset-distance: 30%;
+    width: 35%;
+    height: 35%;
+  }
+  100% {
+    offset-distance: 100%;
+    width: 40%;
+    height: 40%;
+  }
+}
+
+@keyframes middle_circle1 {
+  0% {
+    offset-distance: 0%;
+    width: 35%;
+    height: 35%;
+  }
+  25% {
+    offset-distance: 30%;
+    width: 35%;
+    height: 35%;
+  }
+  100% {
+    offset-distance: 100%;
+    width: 40%;
+    height: 40%;
+  }
+}
+.middle-circle-2 {
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  top: 0;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0) 100%);
+  offset-rotate: auto;
+  -webkit-animation: middle_circle3 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: middle_circle3 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+}
+
+@-webkit-keyframes middle_circle3 {
+  0% {
+    offset-distance: 0%;
+  }
+  25% {
+    offset-distance: 30%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes middle_circle3 {
+  0% {
+    offset-distance: 0%;
+  }
+  25% {
+    offset-distance: 30%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
 .circle-2 {
   position: absolute;
   top: 10vw;
@@ -15282,22 +15520,11 @@ h2.fs-2, .fs-2.h2 {
   width: 69.2vw;
   height: 69.2vw;
   border-radius: 50%;
-  background: radial-gradient(90% 90% at -6% 29%, rgba(210, 0, 140, 0) 0%, rgba(210, 0, 140, 0.3) 35%, #d20043 100%);
+  background: radial-gradient(90% 90% at -6% 29%, rgba(210, 0, 140, 0) 0%, #d20043 100%);
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
   mix-blend-mode: color-dodge;
-  opacity: 0.5;
-}
-.circle-2:before {
-  content: "";
-  position: absolute;
-  z-index: 0;
-  top: -13%;
-  left: -14%;
-  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.75) 0%, rgba(255, 255, 255, 0.7) 15%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.08) 60%, rgba(255, 255, 255, 0) 66%);
-  width: 55%;
-  height: 55%;
 }
 @media (max-width: 992px) {
   .circle-2 {
@@ -15312,18 +15539,176 @@ h2.fs-2, .fs-2.h2 {
     left: 50%;
   }
 }
+.circle-2 .purple-circle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0) 100%);
+}
+.circle-2 .white-circle-1 {
+  -webkit-animation: circle2_1 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: circle2_1 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  -webkit-animation-delay: 5.6s;
+  animation-delay: 5.6s;
+}
+.circle-2 .white-circle-2 {
+  -webkit-animation: circle2_2 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: circle2_2 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  -webkit-animation-delay: 6.7s;
+  animation-delay: 6.7s;
+}
+.circle-2 .white-circle-small {
+  -webkit-animation: small_circle2 10s linear paused;
+  animation: small_circle2 10s linear paused;
+  position: absolute;
+  top: 0;
+}
+.circle-2 .middle-circle-1 {
+  -webkit-animation: middle_circle2 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  animation: middle_circle2 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
+  -webkit-animation-delay: 4.3s;
+  animation-delay: 4.3s;
+}
+.circle-2 .middle-circle-2 {
+  width: 35%;
+  height: 35%;
+  -webkit-animation: middle_circle4 7s linear paused;
+  animation: middle_circle4 7s linear paused;
+  -webkit-animation-delay: 4.8s;
+  animation-delay: 4.8s;
+}
 
+@-webkit-keyframes circle2_1 {
+  0% {
+    offset-distance: 0%;
+  }
+  50% {
+    offset-distance: 55%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+
+@keyframes circle2_1 {
+  0% {
+    offset-distance: 0%;
+  }
+  50% {
+    offset-distance: 55%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+@-webkit-keyframes circle2_2 {
+  0% {
+    offset-distance: 0%;
+  }
+  15% {
+    offset-distance: 15%;
+  }
+  20% {
+    offset-distance: 15%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+@keyframes circle2_2 {
+  0% {
+    offset-distance: 0%;
+  }
+  15% {
+    offset-distance: 15%;
+  }
+  20% {
+    offset-distance: 15%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+@-webkit-keyframes small_circle2 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 70%;
+  }
+}
+@keyframes small_circle2 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 70%;
+  }
+}
+@-webkit-keyframes middle_circle2 {
+  0% {
+    offset-distance: 0%;
+    width: 40%;
+    height: 40%;
+  }
+  30% {
+    offset-distance: 30%;
+    width: 42%;
+    height: 42%;
+  }
+  100% {
+    offset-distance: 100%;
+    width: 45%;
+    height: 45%;
+  }
+}
+@keyframes middle_circle2 {
+  0% {
+    offset-distance: 0%;
+    width: 40%;
+    height: 40%;
+  }
+  30% {
+    offset-distance: 30%;
+    width: 42%;
+    height: 42%;
+  }
+  100% {
+    offset-distance: 100%;
+    width: 45%;
+    height: 45%;
+  }
+}
+@-webkit-keyframes middle_circle4 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
+@keyframes middle_circle4 {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}
 .main-blur1 {
   position: absolute;
-  top: -24vw;
-  left: -3.5vw;
+  top: -28vw;
+  left: -34.5vw;
   -webkit-transform: rotate(20deg);
   -ms-transform: rotate(20deg);
-  transform: rotate(20deg);
-  width: 100vw;
-  height: 64vw;
-  opacity: 0.4;
+  transform: rotate(23deg);
+  width: 137vw;
+  height: 56vw;
   z-index: -1;
+  opacity: 0.3;
+  -webkit-filter: blur(100px);
+  filter: blur(100px);
   background: radial-gradient(50% 50% at 50% 50%, rgb(237, 24, 113) 0%, rgba(237, 24, 113, 0.5) 39.5%, rgba(237, 24, 113, 0.3) 70.99%, rgba(237, 24, 113, 0) 100%);
 }
 @media (max-width: 992px) {
@@ -15498,7 +15883,6 @@ h2.fs-2, .fs-2.h2 {
   border-radius: 1rem;
   border: 1px solid var(--border-gray);
   background: var(--white-background);
-  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
   z-index: -1;
 }
@@ -15678,7 +16062,6 @@ h2.fs-2, .fs-2.h2 {
   left: 0;
   z-index: -1;
   background: var(--menu-background);
-  -webkit-backdrop-filter: blur(50px);
   backdrop-filter: blur(50px);
 }
 .header-tabs .header-wrap-tabs {
@@ -15943,7 +16326,7 @@ h2.fs-2, .fs-2.h2 {
   overflow: hidden;
   width: 100vw;
   top: 0;
-  min-height: 150vh;
+  min-height: 150vw;
   position: absolute;
   pointer-events: none;
 }
@@ -16026,7 +16409,6 @@ h2.fs-2, .fs-2.h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
   background: var(--white-background);
 }
@@ -16256,7 +16638,6 @@ h2.fs-2, .fs-2.h2 {
   left: 0;
   width: 100%;
   height: 100%;
-  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
   background: var(--white-background);
 }
@@ -16365,7 +16746,6 @@ h2.fs-2, .fs-2.h2 {
   height: 100%;
   background: rgba(255, 255, 255, 0.04);
   border: 2px solid rgba(255, 255, 255, 0.04);
-  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
 }
 @media (max-width: 992px) {
@@ -16529,7 +16909,6 @@ h2.fs-2, .fs-2.h2 {
   width: 100% !important;
   height: 100% !important;
   background: var(--white-background);
-  -webkit-backdrop-filter: blur(2rem);
   backdrop-filter: blur(2rem);
 }
 .review-block:hover .blur3 {
@@ -16795,7 +17174,6 @@ input[type=checkbox]:before {
   background: var(--tg-border);
   border: 2px solid var(--tg-border);
   border-radius: 1rem;
-  -webkit-backdrop-filter: blur(57px);
   backdrop-filter: blur(57px);
   z-index: -1;
 }
@@ -16812,7 +17190,6 @@ input[type=checkbox]:before {
   background: var(--blue-border);
   border: 2px solid var(--blue-border);
   border-radius: 1rem;
-  -webkit-backdrop-filter: blur(57px);
   backdrop-filter: blur(57px);
   z-index: -1;
 }
@@ -16826,7 +17203,6 @@ input[type=checkbox]:before {
   background: var(--mail-background);
   border: 2px solid var(--mail-background);
   border-radius: 1rem;
-  -webkit-backdrop-filter: blur(57px);
   backdrop-filter: blur(57px);
   z-index: -1;
 }

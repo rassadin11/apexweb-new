@@ -214,7 +214,6 @@ input[type=checkbox]:before {
   background: var(--tg-border);
   border: 2px solid var(--tg-border);
   border-radius: 1rem;
-  -webkit-backdrop-filter: blur(57px);
   backdrop-filter: blur(57px);
   z-index: -1;
 }
@@ -231,7 +230,6 @@ input[type=checkbox]:before {
   background: var(--blue-border);
   border: 2px solid var(--blue-border);
   border-radius: 1rem;
-  -webkit-backdrop-filter: blur(57px);
   backdrop-filter: blur(57px);
   z-index: -1;
 }
@@ -245,7 +243,6 @@ input[type=checkbox]:before {
   background: var(--mail-background);
   border: 2px solid var(--mail-background);
   border-radius: 1rem;
-  -webkit-backdrop-filter: blur(57px);
   backdrop-filter: blur(57px);
   z-index: -1;
 }
