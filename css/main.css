@@ -15288,13 +15288,12 @@ h2.fs-2, .fs-2.h2 {
   height: 100%;
   border-radius: 50%;
   background: radial-gradient(90% 90% at -6% 29%, rgba(210, 0, 140, 0) 0%, #d20043 100%);
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
   mix-blend-mode: color-dodge;
   z-index: -1;
   pointer-events: none;
   overflow: hidden;
+  -webkit-animation: circle1_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: circle1_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 .circle-1::after {
   content: "";
@@ -15326,6 +15325,51 @@ h2.fs-2, .fs-2.h2 {
   background: radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
+@-webkit-keyframes circle1_move {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  25% {
+    -webkit-transform: rotate(170deg);
+    transform: rotate(170deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(190deg);
+    transform: rotate(190deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes circle1_move {
+  0% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  25% {
+    -webkit-transform: rotate(170deg);
+    transform: rotate(170deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+  75% {
+    -webkit-transform: rotate(190deg);
+    transform: rotate(190deg);
+  }
+  100% {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+}
 .white-circle-1 {
   position: absolute;
   width: 55%;
@@ -15525,6 +15569,8 @@ h2.fs-2, .fs-2.h2 {
   pointer-events: none;
   overflow: hidden;
   mix-blend-mode: color-dodge;
+  -webkit-animation: circle2_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation: circle2_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 @media (max-width: 992px) {
   .circle-2 {
@@ -15579,6 +15625,51 @@ h2.fs-2, .fs-2.h2 {
   animation-delay: 4.8s;
 }
 
+@-webkit-keyframes circle2_move {
+  0% {
+    -webkit-transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
+  }
+  25% {
+    -webkit-transform: rotate(10deg) translate(0, 0);
+    transform: rotate(10deg) translate(0, 0);
+  }
+  50% {
+    -webkit-transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
+  }
+  75% {
+    -webkit-transform: rotate(-30deg) translate(150px, -150px);
+    transform: rotate(-30deg) translate(150px, -150px);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+@keyframes circle2_move {
+  0% {
+    -webkit-transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
+  }
+  25% {
+    -webkit-transform: rotate(10deg) translate(0, 0);
+    transform: rotate(10deg) translate(0, 0);
+  }
+  50% {
+    -webkit-transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
+  }
+  75% {
+    -webkit-transform: rotate(-30deg) translate(150px, -150px);
+    transform: rotate(-30deg) translate(150px, -150px);
+  }
+  100% {
+    -webkit-transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
 @-webkit-keyframes circle2_1 {
   0% {
     offset-distance: 0%;
@@ -15590,7 +15681,6 @@ h2.fs-2, .fs-2.h2 {
     offset-distance: 100%;
   }
 }
-
 @keyframes circle2_1 {
   0% {
     offset-distance: 0%;
