@@ -156,6 +156,14 @@ h2.fs-2 {
   right: 27.25vw;
   width: 100vw;
   height: 100vw;
+
+  @media (max-width: 700px) {
+    right: inherit;
+  }
+
+  @media (max-width: 450px) {
+    top: -34vw;
+  }
 }
 
 .circle-1 {
@@ -176,6 +184,16 @@ h2.fs-2 {
   overflow: hidden;
   animation: circle1_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 
+  @media (max-width: 768px) {
+    animation: circle1_move1 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @media (max-width: 700px) {
+    animation: circle1_move2 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    height: 93vh;
+    width: 90vh;
+  }
+
   &::after {
     content: "";
     width: 10px;
@@ -187,12 +205,12 @@ h2.fs-2 {
     background: red;
   }
 
-  @media (max-width: 992px) {
-    top: -8%;
-    right: 38%;
-    width: 100vh;
-    min-height: 100vh;
-  }
+  // @media (max-width: 992px) {
+  //   top: -8% !important;
+  //   right: 38% !important;
+  //   width: 100vh !important;
+  //   min-height: 100vh !important;
+  // }
 
   .purple-circle {
     position: absolute;
@@ -230,6 +248,50 @@ h2.fs-2 {
 
   100% {
     transform: rotate(180deg);
+  }
+}
+
+@keyframes circle1_move1 {
+  0% {
+    transform: rotate(190deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(190deg);
+  }
+
+  75% {
+    transform: rotate(195deg);
+  }
+
+  100% {
+    transform: rotate(190deg);
+  }
+}
+
+@keyframes circle1_move2 {
+  0% {
+    transform: rotate(170deg);
+  }
+
+  25% {
+    transform: rotate(180deg);
+  }
+
+  50% {
+    transform: rotate(170deg);
+  }
+
+  75% {
+    transform: rotate(165deg);
+  }
+
+  100% {
+    transform: rotate(170deg);
   }
 }
 
@@ -434,14 +496,25 @@ h2.fs-2 {
   animation: circle2_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 
   @media (max-width: 992px) {
-    top: 29%;
-    left: 60%;
-    width: 69.2vh;
-    height: 69.2vh;
+    animation: circle2_move1 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
   @media (max-width: 768px) {
-    left: 50%;
+    animation: circle2_move2 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @media (max-width: 700px) {
+    animation: circle2_move3 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    height: 82vh;
+    width: 85vh;
+  }
+
+  @media (max-width: 650px) {
+    animation: circle2_move4 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+
+  @media (max-width: 500px) {
+    animation: circle2_move5 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
   .purple-circle {
@@ -504,6 +577,116 @@ h2.fs-2 {
 
   100% {
     transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+@keyframes circle2_move1 {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  25% {
+    transform: rotate(10deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  75% {
+    transform: rotate(-30deg) translate(75px, -75px);
+  }
+
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+@keyframes circle2_move2 {
+  0% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  25% {
+    transform: rotate(20deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+
+  75% {
+    transform: rotate(-15deg) translate(75px, -75px);
+  }
+
+  100% {
+    transform: rotate(0deg) translate(0, 0);
+  }
+}
+
+@keyframes circle2_move3 {
+  0% {
+    transform: rotate(30deg) translate(0, 0);
+  }
+
+  25% {
+    transform: rotate(35deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(42deg) translate(0, 0);
+  }
+
+  75% {
+    transform: rotate(35deg) translate(40px, -40px);
+  }
+
+  100% {
+    transform: rotate(30deg) translate(0, 0);
+  }
+}
+
+@keyframes circle2_move4 {
+  0% {
+    transform: rotate(30deg) translate(0, 0);
+  }
+
+  25% {
+    transform: rotate(20deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(40deg) translate(0, 0);
+  }
+
+  75% {
+    transform: rotate(25deg) translate(40px, -40px);
+  }
+
+  100% {
+    transform: rotate(30deg) translate(0, 0);
+  }
+}
+
+@keyframes circle2_move5 {
+  0% {
+    transform: rotate(35deg) translate(0, 0);
+  }
+
+  25% {
+    transform: rotate(25deg) translate(0, 0);
+  }
+
+  50% {
+    transform: rotate(45deg) translate(0, 0);
+  }
+
+  75% {
+    transform: rotate(30deg) translate(40px, -40px);
+  }
+
+  100% {
+    transform: rotate(35deg) translate(0, 0);
   }
 }
 
@@ -604,17 +787,24 @@ h2.fs-2 {
     position: absolute;
     top: -46vw;
     left: -32.5vw;
-    -webkit-transform: rotate(20deg);
-    -ms-transform: rotate(20deg);
     transform: rotate(20deg);
     width: 150vw;
     height: 106vh;
-    opacity: 0.5;
+    opacity: 0.4;
   }
 
   @media (max-width: 768px) {
-    width: 250vw;
-    left: -68.5vw;
+    left: -14.5vw;
+    width: 131vw;
+    transform: rotate(28deg);
+  }
+
+  @media (max-width: 550px) {
+    opacity: 0.35;
+  }
+
+  @media (max-width: 450px) {
+    opacity: 0.3;
   }
 }
 
