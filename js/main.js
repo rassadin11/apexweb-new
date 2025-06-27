@@ -5046,7 +5046,6 @@ document.addEventListener("DOMContentLoaded", () => {
     centerY = windowHeight * -0.01;
   }
   let start = null;
-  let animationFrameId;
   function animate(timestamp) {
     if (!start) start = timestamp;
     const elapsed = (timestamp - start) % duration;
@@ -5076,11 +5075,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const y = centerY + radius * sin;
     circle.style.left = `${x}px`;
     circle.style.top = `${y}px`;
-    animationFrameId = requestAnimationFrame(animate);
-  }
-  function restartAnimation() {
-    cancelAnimationFrame(animationFrameId);
-    start = null;
     requestAnimationFrame(animate);
   }
   requestAnimationFrame(animate);
@@ -5198,8 +5192,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setSafeTimeout(() => startFourthCircles(), 20000);
     setSafeTimeout(() => startFifthCircles(), 28000);
   }
-
-  // 🔰 Запуск при первом открытии
   restartAllCircles();
 
   // 👀 Перезапуск при возврате на вкладку
@@ -5208,10 +5200,6 @@ document.addEventListener("DOMContentLoaded", () => {
       restartAllCircles();
     }
   });
-  window.onresize = () => {
-    restartAllCircles();
-    restartAnimation();
-  };
 });
 })();
 
