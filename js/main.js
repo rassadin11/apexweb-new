@@ -5040,7 +5040,7 @@ if (windowWidth <= 570) {
   centerX = windowHeight * -0.3;
   centerY = windowHeight * 0.03;
 }
-if (windowWidth <= 450) {
+if (windowWidth <= 460) {
   offsetY = windowHeight * 0.55;
   offsetX = windowHeight * 0.85;
   centerX = windowHeight * -0.33;
@@ -5203,6 +5203,9 @@ document.addEventListener("visibilitychange", () => {
     restartAllCircles();
   }
 });
+window.onresize = () => {
+  restartAllCircles();
+};
 })();
 
 /******/ })()
