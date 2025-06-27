@@ -5008,8 +5008,6 @@ const windowHeight = window.innerHeight;
 if (windowHeight < 500) {
   windowHeight = 500;
 }
-
-// Центр движения
 let centerX = -100;
 let centerY = 0;
 let radius = 80;
@@ -5047,6 +5045,7 @@ if (windowWidth <= 460) {
   centerY = windowHeight * -0.01;
 }
 let start = null;
+let animationFrameId;
 function animate(timestamp) {
   if (!start) start = timestamp;
   const elapsed = (timestamp - start) % duration;
@@ -5076,6 +5075,11 @@ function animate(timestamp) {
   const y = centerY + radius * sin;
   circle.style.left = `${x}px`;
   circle.style.top = `${y}px`;
+  animationFrameId = requestAnimationFrame(animate);
+}
+function restartAnimation() {
+  cancelAnimationFrame(animationFrameId);
+  start = null;
   requestAnimationFrame(animate);
 }
 requestAnimationFrame(animate);
@@ -5205,6 +5209,7 @@ document.addEventListener("visibilitychange", () => {
 });
 window.onresize = () => {
   restartAllCircles();
+  restartAnimation();
 };
 })();
 
