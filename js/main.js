@@ -5041,12 +5041,9 @@ if (windowWidth <= 570) {
   centerY = windowHeight * 0.03;
 }
 if (windowWidth <= 450) {
-  offsetY = windowHeight * 0.45;
+  offsetY = windowHeight * 0.5;
   centerX = windowHeight * -0.33;
   centerY = windowHeight * -0.01;
-}
-if (windowWidth <= 420) {
-  offsetY = windowHeight * 0.5;
 }
 let start = null;
 function animate(timestamp) {
