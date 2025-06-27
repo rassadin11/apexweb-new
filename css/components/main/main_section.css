@@ -83,7 +83,12 @@
   overflow: hidden;
   width: 100vw;
   top: 0;
-  min-height: 150vw;
+  min-height: 200vw;
   position: absolute;
   pointer-events: none;
+}
+@media (max-width: 600px) {
+  .main-section__background {
+    min-height: 200vh;
+  }
 }/*# sourceMappingURL=main_section.css.map */

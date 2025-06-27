@@ -5004,15 +5004,44 @@ const circle = document.querySelector(".circles");
 const circle1 = document.querySelector(".circle-1");
 const circle2 = document.querySelector(".circle-2");
 const windowWidth = document.querySelector("body").clientWidth;
+const windowHeight = window.innerHeight;
 
 // Центр движения
-const centerX = -100;
-const centerY = 0;
-const radius = 80;
+let centerX = -100;
+let centerY = 0;
+let radius = 80;
 const duration = 35.5 * 1000; // 35.5 секунд
 const halfDuration = duration / 2;
-const offsetX = 0;
-const offsetY = 0;
+let offsetX = 0;
+let offsetY = 0;
+if (windowWidth <= 992) {
+  radius = 50;
+  centerY = windowHeight * 0.12;
+  offsetX = windowWidth * 0.65;
+  offsetY = windowHeight * 0.15;
+}
+if (windowWidth <= 768) {
+  offsetX = windowWidth * 0.65;
+  offsetY = windowHeight * 0.2;
+}
+if (windowWidth <= 700) {
+  centerX = windowHeight * -0.27;
+  centerY = windowHeight * 0.06;
+  offsetX = windowHeight * 0.75;
+  offsetY = windowHeight * 0.3;
+}
+if (windowWidth <= 650) {
+  offsetY = windowHeight * 0.35;
+}
+if (windowWidth <= 570) {
+  centerX = windowHeight * -0.3;
+  centerY = windowHeight * 0.03;
+}
+if (windowWidth <= 450) {
+  offsetY = windowHeight * 0.45;
+  centerX = windowHeight * -0.33;
+  centerY = windowHeight * -0.01;
+}
 let start = null;
 function animate(timestamp) {
   if (!start) start = timestamp;
@@ -5031,8 +5060,14 @@ function animate(timestamp) {
   const y2 = y1 + offsetY;
   circle1.style.left = `${x1}px`;
   circle1.style.top = `${y1}px`;
-  circle2.style.left = `${windowWidth / 100 * 65.9 + x2}px`;
-  circle2.style.top = `${windowWidth / 10 + y2}px`;
+  console.log(x2, y2);
+  if (windowWidth > 992) {
+    circle2.style.left = `${windowWidth / 100 * 65.9 + x2}px`;
+    circle2.style.top = `${windowWidth / 10 + y2}px`;
+  } else {
+    circle2.style.left = `${x2}px`;
+    circle2.style.top = `${y2}px`;
+  }
   const x = centerX + radius * cos;
   const y = centerY + radius * sin;
   circle.style.left = `${x}px`;
