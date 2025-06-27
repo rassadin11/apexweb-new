@@ -5005,6 +5005,9 @@ const circle1 = document.querySelector(".circle-1");
 const circle2 = document.querySelector(".circle-2");
 const windowWidth = document.querySelector("body").clientWidth;
 const windowHeight = window.innerHeight;
+if (windowHeight < 500) {
+  windowHeight = 500;
+}
 
 // Центр движения
 let centerX = -100;
@@ -5041,6 +5044,9 @@ if (windowWidth <= 450) {
   offsetY = windowHeight * 0.45;
   centerX = windowHeight * -0.33;
   centerY = windowHeight * -0.01;
+}
+if (windowWidth <= 420) {
+  offsetY = windowHeight * 0.5;
 }
 let start = null;
 function animate(timestamp) {
