@@ -5042,6 +5042,7 @@ if (windowWidth <= 570) {
 }
 if (windowWidth <= 450) {
   offsetY = windowHeight * 0.55;
+  offsetX = windowHeight * 0.85;
   centerX = windowHeight * -0.33;
   centerY = windowHeight * -0.01;
 }
