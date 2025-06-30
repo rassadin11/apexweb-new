@@ -236,8 +236,28 @@
 .background-footer-blur {
   position: absolute;
   bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 180%;
+  left: 50%;
+  width: 250vw;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  height: 5000px;
   z-index: -1;
+}
+.background-footer-blur:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(50% 50% at bottom, #29278a 0%, #1d1a66 39.5%, #110d30 70.99%, #06040d 100%);
+}
+.background-footer-blur svg {
+  position: absolute;
+  bottom: -36%;
+  left: 50%;
+  width: 100vw;
+  height: 100%;
+  -webkit-transform: translate(-50%, 0);
+  -ms-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }/*# sourceMappingURL=footer.css.map */

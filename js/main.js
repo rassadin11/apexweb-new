@@ -4934,8 +4934,11 @@ window.addEventListener('resize', () => {
   document.documentElement.style.setProperty('--vh', `${vh}px`);
 });
 
+// animation 25s
+let timeouts = [];
+
 // svg path computer
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", () => {
   function pathComputer(initialPath, target, divider, element) {
     let array = initialPath.split(" ");
     array.forEach((item, idx) => {
@@ -5000,87 +5003,109 @@ document.addEventListener("DOMContentLoaded", () => {
   pathComputer(trajectory1_5, circleW_1, trajectory1_5_divider, circle1_5);
   pathComputer(trajectory2_5, circleW_2, trajectory2_5_divider, circle2_5);
 
-  // animation circles rotation
-  const circle = document.querySelector(".circles");
-  const circle1 = document.querySelector(".circle-1");
-  const circle2 = document.querySelector(".circle-2");
-  const windowWidth = document.querySelector("body").clientWidth;
-  const windowHeight = window.innerHeight;
-  if (windowHeight < 500) {
-    windowHeight = 500;
-  }
-  let centerX = -100;
-  let centerY = 0;
-  let radius = 80;
-  const duration = 35.5 * 1000; // 35.5 секунд
-  const halfDuration = duration / 2;
-  let offsetX = 0;
-  let offsetY = 0;
-  if (windowWidth <= 992) {
-    radius = 50;
-    centerY = windowHeight * 0.12;
-    offsetX = windowWidth * 0.65;
-    offsetY = windowHeight * 0.15;
-  }
-  if (windowWidth <= 768) {
-    offsetX = windowWidth * 0.65;
-    offsetY = windowHeight * 0.2;
-  }
-  if (windowWidth <= 700) {
-    centerX = windowHeight * -0.27;
-    centerY = windowHeight * 0.06;
-    offsetX = windowHeight * 0.75;
-    offsetY = windowHeight * 0.3;
-  }
-  if (windowWidth <= 650) {
-    offsetY = windowHeight * 0.35;
-  }
-  if (windowWidth <= 570) {
-    centerX = windowHeight * -0.3;
-    centerY = windowHeight * 0.03;
-  }
-  if (windowWidth <= 460) {
-    offsetY = windowHeight * 0.55;
-    offsetX = windowHeight * 0.85;
-    centerX = windowHeight * -0.33;
-    centerY = windowHeight * -0.01;
-  }
-  let start = null;
-  function animate(timestamp) {
-    if (!start) start = timestamp;
-    const elapsed = (timestamp - start) % duration;
-    let angle;
-    if (elapsed <= halfDuration) {
-      angle = elapsed / halfDuration * (Math.PI / 2);
-    } else {
-      angle = (1 - (elapsed - halfDuration) / halfDuration) * (Math.PI / 2);
-    }
-    const sin = Math.sin(angle);
-    const cos = Math.cos(angle);
-    const x1 = centerX + radius * cos;
-    const y1 = centerY + radius * sin;
-    const x2 = x1 + offsetX;
-    const y2 = y1 + offsetY;
-    circle1.style.left = `${x1}px`;
-    circle1.style.top = `${y1}px`;
-    console.log(x2, y2);
-    if (windowWidth > 992) {
-      circle2.style.left = `${windowWidth / 100 * 65.9 + x2}px`;
-      circle2.style.top = `${windowWidth / 10 + y2}px`;
-    } else {
-      circle2.style.left = `${x2}px`;
-      circle2.style.top = `${y2}px`;
-    }
-    const x = centerX + radius * cos;
-    const y = centerY + radius * sin;
-    circle.style.left = `${x}px`;
-    circle.style.top = `${y}px`;
-    requestAnimationFrame(animate);
-  }
-  requestAnimationFrame(animate);
-
   // animation 25s
-  let timeouts = [];
+
+  function startFirstCircles() {
+    circle1_1.style.animation = "circle1 13s cubic-bezier(0.4, 0, 0.2, 1)";
+
+    // обычный большой круг
+
+    setTimeout(() => {
+      circle1_1.style.animation = "none";
+      void circle1_1.offsetWidth;
+    }, 13000);
+    setTimeout(() => {
+      circle2_1.style.animation = "circle2_1 13s cubic-bezier(0.4, 0, 0.2, 1)";
+      setTimeout(() => {
+        circle2_1.style.animation = "none";
+        void circle2_1.offsetWidth;
+      }, 13000);
+    }, 6050);
+    setTimeout(() => {
+      startFirstCircles();
+    }, 35500);
+  }
+  function startSecondCircles() {
+    circle1_5.style.animation = "middle_circle3 10s cubic-bezier(0.4, 0, 0.2, 1)";
+    setTimeout(() => {
+      circle1_5.style.animation = "none";
+      void circle1_5.offsetWidth;
+    }, 10000);
+    setTimeout(() => {
+      circle2_5.style.animation = "middle_circle4 8s cubic-bezier(0.4, 0, 0.2, 1)";
+      setTimeout(() => {
+        circle2_5.style.animation = "none";
+        void circle2_5.offsetWidth;
+      }, 8000);
+    }, 4400);
+    setTimeout(() => {
+      startSecondCircles();
+    }, 35500);
+  }
+  function startThirdCircles() {
+    circle1_3.style.animation = "circle2 13s cubic-bezier(0.4, 0, 0.2, 1)";
+    setTimeout(() => {
+      circle1_3.style.animation = "none";
+      void circle1_3.offsetWidth;
+    }, 13000);
+    setTimeout(() => {
+      circle2_3.style.animation = "circle2_2 13s cubic-bezier(0.4, 0, 0.2, 1)";
+      setTimeout(() => {
+        circle2_3.style.animation = "none";
+        void circle2_3.offsetWidth;
+      }, 13000);
+    }, 6700);
+    setTimeout(() => {
+      startThirdCircles();
+    }, 35500);
+  }
+  function startFourthCircles() {
+    circle1_2.style.animation = "small_circle1 10s cubic-bezier(0.4, 0, 0.2, 1)";
+    setTimeout(() => {
+      circle1_2.style.animation = "none";
+      void circle1_2.offsetWidth;
+    }, 10000);
+    setTimeout(() => {
+      circle2_2.style.animation = "small_circle2 10s linear";
+      setTimeout(() => {
+        circle2_2.style.animation = "none";
+        void circle2_2.offsetWidth;
+      }, 10000);
+    }, 5000);
+    setTimeout(() => {
+      startThirdCircles();
+    }, 35500);
+  }
+  function startFifthCircles() {
+    circle1_4.style.animation = "middle_circle1 10s cubic-bezier(0.4, 0, 0.2, 1)";
+    setTimeout(() => {
+      circle1_4.style.animation = "none";
+      void circle1_4.offsetWidth;
+    }, 10000);
+    setTimeout(() => {
+      circle2_4.style.animation = "middle_circle2 10s cubic-bezier(0.4, 0, 0.2, 1)";
+      setTimeout(() => {
+        circle2_4.style.animation = "none";
+        void circle2_4.offsetWidth;
+      }, 10000);
+    }, 4700);
+    setTimeout(() => {
+      startFifthCircles();
+    }, 35500);
+  }
+  startFirstCircles();
+  setTimeout(() => {
+    startSecondCircles();
+  }, 13000);
+  setTimeout(() => {
+    startThirdCircles();
+  }, 18000);
+  setTimeout(() => {
+    startFourthCircles();
+  }, 20000);
+  setTimeout(() => {
+    startFifthCircles();
+  }, 28000);
   function clearAllTimers() {
     timeouts.forEach(clearTimeout);
     timeouts = [];
@@ -5201,6 +5226,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// footer background
+
+function updateBackgroundFooterBlurHeight() {
+  const footer = document.querySelector('footer');
+  const backgroundBlur = document.querySelector('.background-footer-blur');
+  const svg = backgroundBlur?.querySelector('svg');
+  if (footer && backgroundBlur) {
+    const footerHeight = footer.offsetHeight;
+    const newHeight = footerHeight * 3.2;
+    backgroundBlur.style.height = `${newHeight}px`;
+    if (window.innerWidth < 1200) {
+      if (svg) svg.style.display = 'none';
+    } else {
+      if (svg) svg.style.display = '';
+    }
+  }
+}
+
+// Вызываем при загрузке и при изменении размера окна
+window.addEventListener('DOMContentLoaded', updateBackgroundFooterBlurHeight);
+window.addEventListener('resize', updateBackgroundFooterBlurHeight);
 })();
 
 /******/ })()
