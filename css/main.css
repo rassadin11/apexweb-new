@@ -15673,8 +15673,8 @@ h2.fs-2, .fs-2.h2 {
     transform: rotate(5deg);
   }
   55% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-8deg);
+    transform: rotate(-8deg);
   }
   60% {
     -webkit-transform: rotate(-5deg);
@@ -15716,8 +15716,8 @@ h2.fs-2, .fs-2.h2 {
     transform: rotate(5deg);
   }
   55% {
-    -webkit-transform: rotate(-15deg);
-    transform: rotate(-15deg);
+    -webkit-transform: rotate(-8deg);
+    transform: rotate(-8deg);
   }
   60% {
     -webkit-transform: rotate(-5deg);
