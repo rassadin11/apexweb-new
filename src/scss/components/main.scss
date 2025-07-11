@@ -326,8 +326,8 @@ h2.fs-2 {
     offset-distance: 0%;
   }
 
-  45% {
-    offset-distance: 55%;
+  60% {
+    offset-distance: 50%;
   }
 
   100% {
@@ -434,10 +434,10 @@ h2.fs-2 {
     height: 35%;
   }
 
-  25% {
-    offset-distance: 30%;
-    width: 35%;
-    height: 35%;
+  45% {
+    offset-distance: 65%;
+    width: 40%;
+    height: 40%;
   }
 
   100% {
@@ -468,8 +468,8 @@ h2.fs-2 {
     offset-distance: 0%;
   }
 
-  25% {
-    offset-distance: 30%;
+  45% {
+    offset-distance: 55%;
   }
 
   100% {
@@ -495,26 +495,10 @@ h2.fs-2 {
   mix-blend-mode: color-dodge;
   animation: circle2_move 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 
-  @media (max-width: 992px) {
-    animation: circle2_move1 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-
   @media (max-width: 768px) {
     animation: circle2_move2 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-
-  @media (max-width: 700px) {
-    animation: circle2_move3 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
     height: 82vh;
     width: 85vh;
-  }
-
-  @media (max-width: 650px) {
-    animation: circle2_move4 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  }
-
-  @media (max-width: 500px) {
-    animation: circle2_move5 35.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   }
 
   .purple-circle {
@@ -532,22 +516,30 @@ h2.fs-2 {
   .white-circle-1 {
     animation: circle2_1 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
     animation-delay: 5.6s;
+    width: 45%;
+    height: 45%;
   }
 
   .white-circle-2 {
     animation: circle2_2 13s cubic-bezier(0.4, 0, 0.2, 1) paused;
     animation-delay: 6.7s;
+    width: 50%;
+    height: 50%;
   }
 
   .white-circle-small {
     animation: small_circle2 10s linear paused;
     position: absolute;
     top: 0;
+    width: 20%;
+    height: 20%;
   }
 
   .middle-circle-1 {
     animation: middle_circle2 10s cubic-bezier(0.4, 0, 0.2, 1) paused;
     animation-delay: 4.3s;
+    width: 30%;
+    height: 30%;
   }
 
   .middle-circle-2 {
@@ -560,133 +552,37 @@ h2.fs-2 {
 
 @keyframes circle2_move {
   0% {
-    transform: rotate(0deg) translate(0, 0);
-  }
-
-  25% {
-    transform: rotate(10deg) translate(0, 0);
+    transform: rotate(75deg) translate(0, 0);
   }
 
   50% {
-    transform: rotate(0deg) translate(0, 0);
+    transform: rotate(80deg) translate(0, 0);
   }
 
   75% {
-    transform: rotate(-30deg) translate(150px, -150px);
+    transform: rotate(55deg) translate(50px, -50px);
   }
 
   100% {
-    transform: rotate(0deg) translate(0, 0);
-  }
-}
-
-@keyframes circle2_move1 {
-  0% {
-    transform: rotate(0deg) translate(0, 0);
-  }
-
-  25% {
-    transform: rotate(10deg) translate(0, 0);
-  }
-
-  50% {
-    transform: rotate(0deg) translate(0, 0);
-  }
-
-  75% {
-    transform: rotate(-30deg) translate(75px, -75px);
-  }
-
-  100% {
-    transform: rotate(0deg) translate(0, 0);
+    transform: rotate(70deg) translate(0, 0);
   }
 }
 
 @keyframes circle2_move2 {
   0% {
-    transform: rotate(0deg) translate(0, 0);
-  }
-
-  25% {
-    transform: rotate(20deg) translate(0, 0);
+    transform: rotate(75deg) translate(0, 0);
   }
 
   50% {
-    transform: rotate(0deg) translate(0, 0);
+    transform: rotate(80deg) translate(0, 0);
   }
 
   75% {
-    transform: rotate(-15deg) translate(75px, -75px);
+    transform: rotate(70deg) translate(15px, -15px);
   }
 
   100% {
-    transform: rotate(0deg) translate(0, 0);
-  }
-}
-
-@keyframes circle2_move3 {
-  0% {
-    transform: rotate(30deg) translate(0, 0);
-  }
-
-  25% {
-    transform: rotate(35deg) translate(0, 0);
-  }
-
-  50% {
-    transform: rotate(42deg) translate(0, 0);
-  }
-
-  75% {
-    transform: rotate(35deg) translate(40px, -40px);
-  }
-
-  100% {
-    transform: rotate(30deg) translate(0, 0);
-  }
-}
-
-@keyframes circle2_move4 {
-  0% {
-    transform: rotate(30deg) translate(0, 0);
-  }
-
-  25% {
-    transform: rotate(20deg) translate(0, 0);
-  }
-
-  50% {
-    transform: rotate(40deg) translate(0, 0);
-  }
-
-  75% {
-    transform: rotate(25deg) translate(40px, -40px);
-  }
-
-  100% {
-    transform: rotate(30deg) translate(0, 0);
-  }
-}
-
-@keyframes circle2_move5 {
-  0% {
-    transform: rotate(35deg) translate(0, 0);
-  }
-
-  25% {
-    transform: rotate(25deg) translate(0, 0);
-  }
-
-  50% {
-    transform: rotate(45deg) translate(0, 0);
-  }
-
-  75% {
-    transform: rotate(30deg) translate(40px, -40px);
-  }
-
-  100% {
-    transform: rotate(35deg) translate(0, 0);
+    transform: rotate(75deg) translate(0, 0);
   }
 }
 
@@ -735,20 +631,20 @@ h2.fs-2 {
 @keyframes middle_circle2 {
   0% {
     offset-distance: 0%;
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
   }
 
   30% {
     offset-distance: 30%;
-    width: 42%;
-    height: 42%;
+    width: 32%;
+    height: 32%;
   }
 
   100% {
     offset-distance: 100%;
-    width: 45%;
-    height: 45%;
+    width: 35%;
+    height: 35%;
   }
 }
 
@@ -796,15 +692,16 @@ h2.fs-2 {
   @media (max-width: 768px) {
     left: -14.5vw;
     width: 131vw;
-    transform: rotate(28deg);
+    height: 117vh;
+    transform: rotate(45deg);
   }
 
-  @media (max-width: 550px) {
+  @media (max-width: 700px) {
     opacity: 0.35;
   }
 
-  @media (max-width: 450px) {
-    opacity: 0.3;
+  @media (max-width: 550px) {
+    opacity: 0.4;
   }
 }
 
