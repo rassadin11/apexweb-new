@@ -5201,6 +5201,28 @@ document.addEventListener("visibilitychange", () => {
     restartAllCircles();
   }
 });
+
+// footer background
+
+function updateBackgroundFooterBlurHeight() {
+  const footer = document.querySelector('footer');
+  const backgroundBlur = document.querySelector('.background-footer-blur');
+  const svg = backgroundBlur?.querySelector('svg');
+  if (footer && backgroundBlur) {
+    const footerHeight = footer.offsetHeight;
+    const newHeight = footerHeight * 3.2;
+    backgroundBlur.style.height = `${newHeight}px`;
+    if (window.innerWidth < 1200) {
+      if (svg) svg.style.display = 'none';
+    } else {
+      if (svg) svg.style.display = '';
+    }
+  }
+}
+
+// Вызываем при загрузке и при изменении размера окна
+window.addEventListener('DOMContentLoaded', updateBackgroundFooterBlurHeight);
+window.addEventListener('resize', updateBackgroundFooterBlurHeight);
 })();
 
 /******/ })()
