@@ -1,507 +1,772 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
+  @include('partials/head.html')
 
-@include('partials/head.html')
+  <body>
+    <div class="position-relative overflow-x-hidden">
+      @include('partials/header.html')
+      <main class="main container mb-10">
+        <h1 class="text-center mb-7 mt-8">Блог APEXWEB</h1>
+        <p class="text-center mb-8 blog-description">
+          Написали интересные статьи и помогли разобраться с со сложными темами
+          <br />
+          интернет маркетинга и цифровой грамотности не одному пользователю!
+        </p>
+        <div
+          class="d-lg-grid d-flex flex-column blog-wrapper gap-4 mt-lg-9 mt-8"
+        >
+          <aside class="article-sidebar blog">
+            <div class="position-sticky p-md-5 p-3 rounded-4">
+              <h3 class="article-sidebar__title fs-3 mb-md-4 mb-3">Разделы</h3>
 
-<body>
-    <div>
-        @include('partials/header.html')
-        <main class="main container mb-10">
-            <h1 class="text-center mb-7 mt-8">Блог APEXWEB</h1>
-            <p class="text-center mb-8 blog-description">Написали интересные статьи и помогли разобраться с со сложными
-                темами <br />
-                интернет маркетинга и цифровой грамотности не одному пользователю!</p>
-            <div class=" d-lg-grid d-flex flex-column blog-wrapper gap-4 mt-lg-9 mt-8">
-                <aside class="article-sidebar blog">
-                    <div class="position-sticky p-md-5 p-3 rounded-4">
-                        <h3 class="article-sidebar__title fs-3 mb-md-4 mb-3">Разделы</h3>
-
-                        <ul class="blog-sidebar__list table_of_context d-flex flex-column gap-3 p-0">
-                            <li class="d-flex align-items-center gap-3"><a href="#first"
-                                    class="active rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"><svg
-                                        class="fire">
-                                        <use xlink:href="./img/svg/sprite.svg#fire"></use>
-                                    </svg> Популярное</a>
-                            </li>
-                            <li class="d-flex align-items-center gap-3">
-                                <a href="#second"
-                                    class="rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"><svg
-                                        class="aim">
-                                        <use xlink:href="./img/svg/sprite.svg#aim"></use>
-                                    </svg> Маркетинг</a>
-                            </li>
-                            <li class="d-flex align-items-center gap-3">
-                                <a href="#third"
-                                    class="rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"><svg
-                                        class="strange">
-                                        <use xlink:href="./img/svg/sprite.svg#strange"></use>
-                                    </svg> Технологии</a>
-                            </li>
-                            <li class="d-flex align-items-center gap-3">
-                                <a href="#fourth"
-                                    class="rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3">
-                                    <svg class="brush">
-                                        <use xlink:href="./img/svg/sprite.svg#brush"></use>
-                                    </svg> Дизайн</a>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-                <section class="article-main blog w-100">
-                    <div class="blog-preview default-background p-md-5 p-3 rounded-4 position-relative overflow-hidden">
-                        <img src="./img/article-banner.jpg" alt="article banner" class="rounded-4 w-100">
-                        <div class="blog-preview__text mt-7">
-                            <p class="mt-4">Опыт специалистов команды APEXWEB выходит за пределы решения задач бизнеса
-                                и его
-                                пользователей. В этом разделе Вы
-                                сможете не только более глубоко вникнуть в работу нашего агенства, но и узнать для себя
-                                что-то новое.</p>
-                            <p class="mt-4">Наши специалисты будут только рады оценкам статей. Надеемся, что Вы найдёте
-                                для себя
-                                что-нибудь очень интересное и
-                                полезное.</p>
-                            <p class="mt-4">Команда APEXWEB 2025г.</p>
-                        </div>
-                    </div>
-
-                    <div class="block-anchor most-famous position-relative mt-lg-9 mt-7" id="first">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-fire">
-                                <use xlink:href="./img/svg/sprite.svg#fire"></use>
-                            </svg> Самые популярные статьи за месяц</h2>
-
-                        <div class="background-blue-blur helpful position-absolute"></div>
-
-                        <div class="projects__wrapper d-grid gap-4 mt-md-8 mt-5">
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Платный хостинг — гарантия надежнсти</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили пользовательский опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block-anchor marketing position-relative mt-lg-9 mt-7" id="second">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-aim">
-                                <use xlink:href="./img/svg/sprite.svg#aim"></use>
-                            </svg> Маркетинг</h2>
-
-                        <div class="background-blue-blur helpful position-absolute"></div>
-
-                        <div class="projects__wrapper marketing d-grid gap-4 mt-md-8 mt-5">
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful2.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий…</p>
-                                    </div>
-
-                                    <div
-                                        class="project__links links-project d-flex justify-content-between mt-md-4 mt-3">
-                                        <div class="links-project__wrapper d-flex gap-2">
-                                            <p class="links-project__link rounded-3">
-                                                <a class="py-2 px-3 d-block" href="#">Провайдер B2B</a>
-                                            </p>
-                                            <p class="links-project__link rounded-3">
-                                                <a class="py-2 px-3 d-block" href="#">Провайдер B2B</a>
-                                            </p>
-                                        </div>
-                                        <p class="links-project__link rounded-3">
-                                            <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                                href="#"><span>Смотреть кейс</span>
-                                                <svg class="large-arrow">
-                                                    <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                                </svg>
-                                            </a>
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Платный хостинг — гарантия надежнсти</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили пользовательский опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Платный хостинг — гарантия надежнсти</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили пользовательский опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block-anchor technologies position-relative mt-lg-9 mt-7" id="third">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-strange">
-                                <use xlink:href="./img/svg/sprite.svg#strange"></use>
-                            </svg> Технологии</h2>
-
-                        <div class="background-blue-blur helpful position-absolute"></div>
-
-                        <div class="projects__wrapper technologies d-grid gap-4 mt-md-8 mt-5">
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Платный хостинг — гарантия надежнсти</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили пользовательский опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Платный хостинг — гарантия надежнсти</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили пользовательский опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="block-anchor most-famous position-relative mt-lg-9 mt-7" id="fourth">
-                        <h2 class="fs-2 d-flex align-items-center gap-4 px-3"><svg class="big-brush">
-                                <use xlink:href="./img/svg/sprite.svg#brush"></use>
-                            </svg> Дизайн</h2>
-
-                        <div class="background-blue-blur helpful position-absolute"></div>
-
-                        <div class="projects__wrapper d-grid gap-4 mt-md-8 mt-5">
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Векторизируй всё!</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили
-                                            пользовательский
-                                            опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                            <div
-                                class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden">
-                                <div class="project__wrapper position-relative d-flex flex-column h-100">
-                                    <a href="#"><img src="./img/helpful1.jpg" alt="project"
-                                            class="project-projects__img rounded-3 w-100"></a>
-                                    <div class="flex-fill">
-                                        <p class="why-we__title mt-md-6 mt-3">Платный хостинг — гарантия надежнсти</p>
-                                        <p class="why-we__description mt-md-3 mt-2">Упаковали новый визуал сайта,
-                                            улучшили пользовательский опыт, увеличили процент конверсий...</p>
-                                    </div>
-
-                                    <p class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto">
-                                        <a class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
-                                            href="#"><span>Читать статью</span>
-                                            <svg class="large-arrow">
-                                                <use href="./img/svg/sprite.svg#large-arrow"></use>
-                                            </svg>
-                                        </a>
-                                    </p>
-                                </div>
-
-                                <div class="blur3 helpful position-absolute"></div>
-                                <div class="blur4 helpful position-absolute"></div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+              <ul
+                class="blog-sidebar__list table_of_context d-flex flex-column gap-3 p-0"
+              >
+                <li class="d-flex align-items-center gap-3">
+                  <a
+                    href="#first"
+                    class="active rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"
+                    ><svg class="fire">
+                      <use xlink:href="./img/svg/sprite.svg#fire"></use>
+                    </svg>
+                    Популярное</a
+                  >
+                </li>
+                <li class="d-flex align-items-center gap-3">
+                  <a
+                    href="#second"
+                    class="rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"
+                    ><svg class="aim">
+                      <use xlink:href="./img/svg/sprite.svg#aim"></use>
+                    </svg>
+                    Маркетинг</a
+                  >
+                </li>
+                <li class="d-flex align-items-center gap-3">
+                  <a
+                    href="#third"
+                    class="rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"
+                    ><svg class="strange">
+                      <use xlink:href="./img/svg/sprite.svg#strange"></use>
+                    </svg>
+                    Технологии</a
+                  >
+                </li>
+                <li class="d-flex align-items-center gap-3">
+                  <a
+                    href="#fourth"
+                    class="rounded-3 py-2 px-3 rounded-3 w-100 d-flex align-items-center gap-3"
+                  >
+                    <svg class="brush">
+                      <use xlink:href="./img/svg/sprite.svg#brush"></use>
+                    </svg>
+                    Дизайн</a
+                  >
+                </li>
+              </ul>
             </div>
-        </main>
-        @include('partials/footer.html')
+          </aside>
+          <section class="article-main blog w-100">
+            <div
+              class="blog-preview default-background p-md-5 p-3 rounded-4 position-relative overflow-hidden"
+            >
+              <img
+                src="./img/article-banner.jpg"
+                alt="article banner"
+                class="rounded-4 w-100"
+              />
+              <div class="blog-preview__text mt-7">
+                <p class="mt-4">
+                  Опыт специалистов команды APEXWEB выходит за пределы решения
+                  задач бизнеса и его пользователей. В этом разделе Вы сможете
+                  не только более глубоко вникнуть в работу нашего агенства, но
+                  и узнать для себя что-то новое.
+                </p>
+                <p class="mt-4">
+                  Наши специалисты будут только рады оценкам статей. Надеемся,
+                  что Вы найдёте для себя что-нибудь очень интересное и
+                  полезное.
+                </p>
+                <p class="mt-4">Команда APEXWEB 2025г.</p>
+              </div>
+            </div>
 
-        <!-- <div class="main-section__background">
+            <div
+              class="block-anchor most-famous position-relative mt-lg-9 mt-7"
+              id="first"
+            >
+              <h2 class="fs-2 d-flex align-items-center gap-4 px-3">
+                <svg class="big-fire">
+                  <use xlink:href="./img/svg/sprite.svg#fire"></use>
+                </svg>
+                Самые популярные статьи за месяц
+              </h2>
+
+              <div class="background-blue-blur helpful position-absolute"></div>
+
+              <div class="projects__wrapper d-grid gap-4 mt-md-8 mt-5">
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Платный хостинг — гарантия надежнсти
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="block-anchor marketing position-relative mt-lg-9 mt-7"
+              id="second"
+            >
+              <h2 class="fs-2 d-flex align-items-center gap-4 px-3">
+                <svg class="big-aim">
+                  <use xlink:href="./img/svg/sprite.svg#aim"></use>
+                </svg>
+                Маркетинг
+              </h2>
+
+              <div class="background-blue-blur helpful position-absolute"></div>
+
+              <div
+                class="projects__wrapper marketing d-grid gap-4 mt-md-8 mt-5"
+              >
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful2.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий…
+                      </p>
+                    </div>
+
+                    <div
+                      class="project__links links-project d-flex justify-content-between mt-md-4 mt-3"
+                    >
+                      <div class="links-project__wrapper d-flex gap-2">
+                        <p class="links-project__link rounded-3">
+                          <a class="py-2 px-3 d-block" href="#"
+                            >Провайдер B2B</a
+                          >
+                        </p>
+                        <p class="links-project__link rounded-3">
+                          <a class="py-2 px-3 d-block" href="#"
+                            >Провайдер B2B</a
+                          >
+                        </p>
+                      </div>
+                      <p class="links-project__link rounded-3">
+                        <a
+                          class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                          href="#"
+                          ><span>Смотреть кейс</span>
+                          <svg class="large-arrow">
+                            <use href="./img/svg/sprite.svg#large-arrow"></use>
+                          </svg>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Платный хостинг — гарантия надежнсти
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Платный хостинг — гарантия надежнсти
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="block-anchor technologies position-relative mt-lg-9 mt-7"
+              id="third"
+            >
+              <h2 class="fs-2 d-flex align-items-center gap-4 px-3">
+                <svg class="big-strange">
+                  <use xlink:href="./img/svg/sprite.svg#strange"></use>
+                </svg>
+                Технологии
+              </h2>
+
+              <div class="background-blue-blur helpful position-absolute"></div>
+
+              <div
+                class="projects__wrapper technologies d-grid gap-4 mt-md-8 mt-5"
+              >
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Платный хостинг — гарантия надежнсти
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Платный хостинг — гарантия надежнсти
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="block-anchor most-famous position-relative mt-lg-9 mt-7"
+              id="fourth"
+            >
+              <h2 class="fs-2 d-flex align-items-center gap-4 px-3">
+                <svg class="big-brush">
+                  <use xlink:href="./img/svg/sprite.svg#brush"></use>
+                </svg>
+                Дизайн
+              </h2>
+
+              <div class="background-blue-blur helpful position-absolute"></div>
+
+              <div class="projects__wrapper d-grid gap-4 mt-md-8 mt-5">
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Векторизируй всё!
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+                <div
+                  class="projects__project project-projects rounded-4 p-md-5 p-3 position-relative overflow-hidden"
+                >
+                  <div
+                    class="project__wrapper position-relative d-flex flex-column h-100"
+                  >
+                    <a href="#"
+                      ><img
+                        src="./img/helpful1.jpg"
+                        alt="project"
+                        class="project-projects__img rounded-3 w-100"
+                    /></a>
+                    <div class="flex-fill">
+                      <p class="why-we__title mt-md-6 mt-3">
+                        Платный хостинг — гарантия надежнсти
+                      </p>
+                      <p class="why-we__description mt-md-3 mt-2">
+                        Упаковали новый визуал сайта, улучшили пользовательский
+                        опыт, увеличили процент конверсий...
+                      </p>
+                    </div>
+
+                    <p
+                      class="links-project__link rounded-3 mt-md-7 mt-3 ms-auto"
+                    >
+                      <a
+                        class="py-md-2 py-1 px-3 d-flex align-items-center gap-3"
+                        href="#"
+                        ><span>Читать статью</span>
+                        <svg class="large-arrow">
+                          <use href="./img/svg/sprite.svg#large-arrow"></use>
+                        </svg>
+                      </a>
+                    </p>
+                  </div>
+
+                  <div class="blur3 helpful position-absolute"></div>
+                  <div class="blur4 helpful position-absolute"></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+      @include('partials/footer.html')
+
+      <!-- <div class="main-section__background">
             <div class="background-wrap"></div>
 
             <div class="main-blur1"></div>
@@ -511,8 +776,7 @@
             <div class="circle-2"></div>
         </div> -->
 
-        <!-- @include('html/h1.html') пример include -->
+      <!-- @include('html/h1.html') пример include -->
     </div>
-</body>
-
+  </body>
 </html>
