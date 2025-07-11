@@ -4759,128 +4759,96 @@ if (document.querySelector('.circle-1')) {
     requestAnimationFrame(animate);
   }
   requestAnimationFrame(animate);
-
-  // animation 25s
   let timeouts = [];
+
+  // Сброс всех setTimeout
   function clearAllTimers() {
     timeouts.forEach(clearTimeout);
     timeouts = [];
   }
+
+  // Безопасный setTimeout
   function setSafeTimeout(callback, delay) {
     const t = setTimeout(callback, delay);
     timeouts.push(t);
     return t;
   }
+
+  // Сброс анимации на элементе
+  function resetAnimation(element) {
+    if (!element) return;
+    element.style.animation = "none";
+    void element.offsetWidth;
+  }
+
+  // Анимация первого набора кругов
   function startFirstCircles() {
+    if (!circle1_1 || !circle2_1) return;
     circle1_1.style.animation = "circle1 13s cubic-bezier(0.4, 0, 0.2, 1)";
-
-    // обычный большой круг
-
-    setTimeout(() => {
-      circle1_1.style.animation = "none";
-      void circle1_1.offsetWidth;
-    }, 13000);
-    setTimeout(() => {
+    setSafeTimeout(() => resetAnimation(circle1_1), 13000);
+    setSafeTimeout(() => {
       circle2_1.style.animation = "circle2_1 13s cubic-bezier(0.4, 0, 0.2, 1)";
-      setTimeout(() => {
-        circle2_1.style.animation = "none";
-        void circle2_1.offsetWidth;
-      }, 13000);
+      setSafeTimeout(() => resetAnimation(circle2_1), 13000);
     }, 3500);
-    setTimeout(() => {
-      startFirstCircles();
-    }, 31000);
+    setSafeTimeout(startFirstCircles, 31000);
   }
   function startSecondCircles() {
+    if (!circle1_5 || !circle2_5) return;
     circle1_5.style.animation = "middle_circle3 10s cubic-bezier(0.4, 0, 0.2, 1)";
-    setTimeout(() => {
-      circle1_5.style.animation = "none";
-      void circle1_5.offsetWidth;
-    }, 10000);
-    setTimeout(() => {
+    setSafeTimeout(() => resetAnimation(circle1_5), 10000);
+    setSafeTimeout(() => {
       circle2_5.style.animation = "middle_circle4 13s cubic-bezier(0.4, 0, 0.2, 1)";
-      setTimeout(() => {
-        circle2_5.style.animation = "none";
-        void circle2_5.offsetWidth;
-      }, 8000);
+      setSafeTimeout(() => resetAnimation(circle2_5), 8000);
     }, 3500);
-    setTimeout(() => {
-      startSecondCircles();
-    }, 31000);
+    setSafeTimeout(startSecondCircles, 31000);
   }
   function startThirdCircles() {
+    if (!circle1_3 || !circle2_3) return;
     circle1_3.style.animation = "circle2 13s cubic-bezier(0.4, 0, 0.2, 1)";
-    setTimeout(() => {
-      circle1_3.style.animation = "none";
-      void circle1_3.offsetWidth;
-    }, 13000);
-    setTimeout(() => {
+    setSafeTimeout(() => resetAnimation(circle1_3), 13000);
+    setSafeTimeout(() => {
       circle2_3.style.animation = "circle2_2 13s cubic-bezier(0.4, 0, 0.2, 1)";
-      setTimeout(() => {
-        circle2_3.style.animation = "none";
-        void circle2_3.offsetWidth;
-      }, 13000);
+      setSafeTimeout(() => resetAnimation(circle2_3), 13000);
     }, 5000);
-    setTimeout(() => {
-      startThirdCircles();
-    }, 31000);
+    setSafeTimeout(startThirdCircles, 31000);
   }
   function startFourthCircles() {
+    if (!circle1_2 || !circle2_2) return;
     circle1_2.style.animation = "small_circle1 10s cubic-bezier(0.4, 0, 0.2, 1)";
-    setTimeout(() => {
-      circle1_2.style.animation = "none";
-      void circle1_2.offsetWidth;
-    }, 10000);
-    setTimeout(() => {
+    setSafeTimeout(() => resetAnimation(circle1_2), 10000);
+    setSafeTimeout(() => {
       circle2_2.style.animation = "small_circle2 10s linear";
-      setTimeout(() => {
-        circle2_2.style.animation = "none";
-        void circle2_2.offsetWidth;
-      }, 10000);
+      setSafeTimeout(() => resetAnimation(circle2_2), 10000);
     }, 3500);
-    setTimeout(() => {
-      startThirdCircles();
-    }, 31000);
+    setSafeTimeout(startFourthCircles, 31000); // БЫЛ БАГ: вызывался startThirdCircles()
   }
   function startFifthCircles() {
+    if (!circle1_4 || !circle2_4) return;
     circle1_4.style.animation = "middle_circle1 10s cubic-bezier(0.4, 0, 0.2, 1)";
-    setTimeout(() => {
-      circle1_4.style.animation = "none";
-      void circle1_4.offsetWidth;
-    }, 10000);
-    setTimeout(() => {
+    setSafeTimeout(() => resetAnimation(circle1_4), 10000);
+    setSafeTimeout(() => {
       circle2_4.style.animation = "middle_circle2 10s cubic-bezier(0.4, 0, 0.2, 1)";
-      setTimeout(() => {
-        circle2_4.style.animation = "none";
-        void circle2_4.offsetWidth;
-      }, 10000);
+      setSafeTimeout(() => resetAnimation(circle2_4), 10000);
     }, 3500);
-    setTimeout(() => {
-      startFifthCircles();
-    }, 31000);
+    setSafeTimeout(startFifthCircles, 31000);
   }
+
+  // Основной перезапуск всех анимаций
   function restartAllCircles() {
-    clearAllTimers(); // остановим предыдущие циклы
-
-    // сброс всех анимаций
+    clearAllTimers();
     const allCircles = document.querySelectorAll(".circle");
-    allCircles.forEach(circle => {
-      circle.style.animation = "none";
-      void circle.offsetWidth;
-    });
-
-    // перезапускаем
+    allCircles.forEach(resetAnimation);
     startFirstCircles();
-    setSafeTimeout(() => startSecondCircles(), 10000);
-    setSafeTimeout(() => startThirdCircles(), 15000);
-    setSafeTimeout(() => startFourthCircles(), 18500);
-    setSafeTimeout(() => startFifthCircles(), 24500);
+    setSafeTimeout(startSecondCircles, 10000);
+    setSafeTimeout(startThirdCircles, 15000);
+    setSafeTimeout(startFourthCircles, 18500);
+    setSafeTimeout(startFifthCircles, 24500);
   }
 
-  // 🔰 Запуск при первом открытии
+  // Запуск при открытии страницы
   restartAllCircles();
 
-  // 👀 Перезапуск при возврате на вкладку
+  // Перезапуск при возвращении на вкладку
   document.addEventListener("visibilitychange", () => {
     if (!document.hidden) {
       restartAllCircles();
