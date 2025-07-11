@@ -116,6 +116,7 @@ h2.fs-2 {
 .default-background {
   background: var(--white-background);
   border: 2px solid var(--white-background);
+  -webkit-backdrop-filter: blur(36px);
   backdrop-filter: blur(36px);
 }
 
